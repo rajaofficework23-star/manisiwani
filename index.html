@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Raja ❤️ Shivani</title>
+<title>Manish ❤️ Shivani</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
@@ -33,31 +33,17 @@ body{
     overflow-x:hidden;
 }
 
-/* ================= BACKGROUND ================= */
+/* BACKGROUND */
 
 .background{
     position:fixed;
     inset:0;
     z-index:-10;
     overflow:hidden;
-
     background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(188,66,91,.30),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(215,165,76,.18),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #110a0d,
-            #281419 50%,
-            #10090b
-        );
+        radial-gradient(circle at 15% 20%,rgba(188,66,91,.30),transparent 32%),
+        radial-gradient(circle at 85% 75%,rgba(215,165,76,.18),transparent 30%),
+        linear-gradient(135deg,#110a0d,#281419 50%,#10090b);
 }
 
 .background:after{
@@ -65,9 +51,7 @@ body{
     position:absolute;
     inset:0;
     opacity:.07;
-
-    background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
 .glow{
@@ -94,29 +78,21 @@ body{
 }
 
 @keyframes floatGlow{
-    from{
-        transform:translate(0,0) scale(1);
-    }
-
-    to{
-        transform:translate(70px,50px) scale(1.15);
-    }
+    from{transform:translate(0,0) scale(1)}
+    to{transform:translate(70px,50px) scale(1.15)}
 }
 
-/* ================= NAV ================= */
+/* NAVIGATION */
 
 nav{
     position:absolute;
     top:0;
     left:0;
     width:100%;
-
     padding:28px 6%;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     z-index:20;
 }
 
@@ -138,21 +114,15 @@ nav{
     opacity:.55;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     min-height:100vh;
-
-    padding:
-        120px 7%
-        170px;
-
+    padding:120px 7% 170px;
     display:flex;
     align-items:center;
     justify-content:center;
-
     text-align:center;
-
     position:relative;
 }
 
@@ -164,1327 +134,19 @@ nav{
     font-size:10px;
     letter-spacing:5px;
     text-transform:uppercase;
-
     color:var(--gold);
-
     margin-bottom:28px;
 }
 
 h1{
     font-family:'Cormorant Garamond',serif;
-
-    font-size:
-        clamp(75px,13vw,175px);
-
+    font-size:clamp(75px,13vw,175px);
     line-height:.70;
-
     font-weight:500;
-
     letter-spacing:-8px;
 }
 
-h1 .raja{
-    display:block;
-}
-
-h1 .shivani{
-    display:block;
-
-    color:transparent;
-
-    -webkit-text-stroke:
-        1px rgba(255,248,239,.85);
-
-    font-style:italic;
-
-    margin-left:70px;
-}
-
-.hero-sub{
-    max-width:650px;
-
-    margin:
-        50px auto 0;
-
-    color:
-        rgba(255,248,239,.64);
-
-    font-size:15px;
-
-    line-height:1.9;
-}
-
-.scroll{
-    margin-top:50px;
-
-    font-size:9px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    opacity:.45;
-}
-
-.floating-heart{
-    position:absolute;
-
-    right:12%;
-    top:28%;
-
-    color:#e49ca8;
-
-    font-size:23px;
-
-    cursor:pointer;
-
-    animation:
-        heartFloat 4s ease-in-out infinite;
-}
-
-@keyframes heartFloat{
-
-    50%{
-        transform:
-            translateY(-18px)
-            rotate(8deg);
-
-        opacity:.55;
-    }
-}
-
-/* ================= MEMORY ================= */
-
-.memory-section{
-    padding:
-        120px 7%
-        240px;
-}
-
-.section-label{
-    text-align:center;
-
-    color:var(--gold);
-
-    font-size:9px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    margin-bottom:22px;
-}
-
-.section-title{
-    text-align:center;
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:
-        clamp(45px,7vw,85px);
-
-    font-weight:500;
-}
-
-.memory-grid{
-
-    max-width:1100px;
-
-    margin:
-        70px auto 0;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:18px;
-}
-
-.memory{
-
-    min-height:230px;
-
-    padding:32px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    background:
-        rgba(255,255,255,.045);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:20px;
-
-    transition:
-        .4s ease;
-}
-
-.memory:hover{
-
-    transform:
-        translateY(-9px);
-
-    background:
-        rgba(255,255,255,.075);
-
-    border-color:
-        rgba(216,179,107,.35);
-}
-
-.memory-number{
-
-    font-size:9px;
-
-    color:var(--gold);
-
-    letter-spacing:2px;
-}
-
-.memory h3{
-
-    margin-top:45px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:30px;
-
-    font-weight:500;
-}
-
-.memory p{
-
-    margin-top:12px;
-
-    color:
-        rgba(255,255,255,.52);
-
-    font-size:13px;
-
-    line-height:1.7;
-}
-
-/* ================= QUOTE ================= */
-
-.quote-section{
-
-    min-height:55vh;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:
-        100px 20px
-        270px;
-
-    text-align:center;
-}
-
-.quote{
-
-    max-width:850px;
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(35px,6vw,70px);
-
-    line-height:1.05;
-}
-
-.quote span{
-
-    color:var(--pink);
-
-    font-style:italic;
-}
-
-.quote-author{
-
-    margin-top:25px;
-
-    color:var(--gold);
-
-    font-size:9px;
-
-    letter-spacing:3px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-
-    padding:
-        60px 20px
-        180px;
-
-    text-align:center;
-
-    color:
-        rgba(255,255,255,.27);
-
-    font-size:9px;
-
-    letter-spacing:2px;
-}
-
-/* ================= YOUTUBE ================= */
-
-/*
-    IMPORTANT:
-    YouTube player is NOT 1x1.
-    It is a proper 200x200 player
-    positioned outside the visible area.
-*/
-
-#youtube-player{
-
-    position:fixed;
-
-    width:200px;
-    height:200px;
-
-    left:-1000px;
-    bottom:0;
-
-    opacity:0;
-
-    pointer-events:none;
-}
-
-/* ================= MUSIC PLAYER ================= */
-
-.music-player{
-
-    position:fixed;
-
-    z-index:100;
-
-    bottom:18px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    width:
-        min(
-            850px,
-            calc(100% - 24px)
-        );
-
-    padding:16px 20px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.14);
-
-    border-radius:20px;
-
-    background:
-        rgba(20,13,15,.90);
-
-    backdrop-filter:
-        blur(25px);
-
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.5);
-}
-
-.player-main{
-
-    display:grid;
-
-    grid-template-columns:
-        52px 1fr auto;
-
-    gap:15px;
-
-    align-items:center;
-}
-
-.album{
-
-    width:52px;
-    height:52px;
-
-    border-radius:14px;
-
-    display:grid;
-
-    place-items:center;
-
-    background:
-        radial-gradient(
-            circle,
-            #fff0d3 0 8%,
-            transparent 9%
-        ),
-        conic-gradient(
-            from 0deg,
-            #d9a65f,
-            #a74d61,
-            #d9a65f
-        );
-
-    box-shadow:
-        0 5px 20px
-        rgba(0,0,0,.4);
-
-    animation:
-        spin 8s linear infinite;
-
-    animation-play-state:paused;
-}
-
-.album.playing{
-    animation-play-state:running;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.song-title{
-
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
-    font-size:13px;
-
-    font-weight:600;
-}
-
-.song-status{
-
-    margin-top:5px;
-
-    color:
-        rgba(255,255,255,.40);
-
-    font-size:9px;
-
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-}
-
-.controls{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-}
-
-.btn{
-
-    width:38px;
-    height:38px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(255,255,255,.14);
-
-    background:
-        rgba(255,255,255,.06);
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:.2s;
-}
-
-.btn:hover{
-
-    transform:scale(1.08);
-
-    background:
-        rgba(255,255,255,.13);
-}
-
-.btn.play{
-
-    width:46px;
-    height:46px;
-
-    background:#e1b86d;
-
-    color:#1a1010;
-
-    border:none;
-
-    font-size:15px;
-}
-
-.progress-wrap{
-
-    margin-top:12px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-}
-
-.time{
-
-    width:30px;
-
-    font-size:8px;
-
-    color:
-        rgba(255,255,255,.35);
-}
-
-.progress{
-
-    height:3px;
-
-    flex:1;
-
-    background:
-        rgba(255,255,255,.12);
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    overflow:hidden;
-}
-
-.progress-bar{
-
-    width:0%;
-
-    height:100%;
-
-    background:#e1b86d;
-
-    transition:
-        width .2s linear;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:750px){
-
-    nav{
-
-        padding:
-            22px 20px;
-    }
-
-    .nav-right{
-
-        display:none;
-    }
-
-    .hero{
-
-        padding:
-            110px 20px
-            150px;
-    }
-
-    h1{
-
-        font-size:
-            22vw;
-
-        letter-spacing:-4px;
-    }
-
-    h1 .shivani{
-
-        margin-left:25px;
-    }
-
-    .floating-heart{
-
-        display:none;
-    }
-
-    .memory-section{
-
-        padding:
-            80px 20px
-            220px;
-    }
-
-    .memory-grid{
-
-        grid-template-columns:1fr;
-
-        gap:12px;
-    }
-
-    .memory{
-
-        min-height:190px;
-    }
-
-    .music-player{
-
-        bottom:8px;
-
-        padding:12px;
-    }
-
-    .player-main{
-
-        grid-template-columns:
-            45px 1fr auto;
-
-        gap:10px;
-    }
-
-    .album{
-
-        width:45px;
-        height:45px;
-    }
-
-    .btn:not(.play){
-
-        width:32px;
-        height:32px;
-
-        font-size:10px;
-    }
-
-    .btn.play{
-
-        width:40px;
-        height:40px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- BACKGROUND -->
-
-<div class="background">
-
-    <div class="glow one"></div>
-
-    <div class="glow two"></div>
-
-</div>
-
-
-<!-- NAV -->
-
-<nav>
-
-    <div class="logo">
-
-        Raja <span>♥</span> Shivani
-
-    </div>
-
-    <div class="nav-right">
-
-        Our Little Universe
-
-    </div>
-
-</nav>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="small-title">
-
-            A song for two hearts
-
-        </div>
-
-        <h1>
-
-            <span class="raja">
-                Raja
-            </span>
-
-            <span class="shivani">
-                Shivani
-            </span>
-
-        </h1>
-
-        <p class="hero-sub">
-
-            Some stories are written in words.
-            Ours is written in songs, little moments,
-            late-night conversations and memories
-            we never want to forget.
-
-        </p>
-
-        <div class="scroll">
-
-            ↓ &nbsp; scroll into our memories
-
-        </div>
-
-    </div>
-
-    <div class="floating-heart">
-        ♥
-    </div>
-
-</section>
-
-
-<!-- MEMORIES -->
-
-<section class="memory-section">
-
-    <div class="section-label">
-
-        01 — The memories
-
-    </div>
-
-    <h2 class="section-title">
-
-        Things worth remembering.
-
-    </h2>
-
-    <div class="memory-grid">
-
-        <div class="memory">
-
-            <div class="memory-number">
-                MEMORY 01
-            </div>
-
-            <h3>
-                Our Song
-            </h3>
-
-            <p>
-
-                Every relationship eventually gets
-                that one song that somehow sounds
-                different after you meet.
-
-            </p>
-
-        </div>
-
-
-        <div class="memory">
-
-            <div class="memory-number">
-                MEMORY 02
-            </div>
-
-            <h3>
-                Just Us
-            </h3>
-
-            <p>
-
-                Two people, countless conversations,
-                random laughs and moments that nobody
-                else understands.
-
-            </p>
-
-        </div>
-
-
-        <div class="memory">
-
-            <div class="memory-number">
-                MEMORY 03
-            </div>
-
-            <h3>
-                Forever
-            </h3>
-
-            <p>
-
-                Not because everything will always
-                be perfect, but because we choose
-                each other again and again.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- QUOTE -->
-
-<section class="quote-section">
-
-    <div>
-
-        <div class="quote">
-
-            “Somewhere between the music
-            and the memories,
-            <span>I found you.</span>”
-
-        </div>
-
-        <div class="quote-author">
-
-            RAJA × SHIVANI
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    MADE WITH LOVE • RAJA ♥ SHIVANI
-
-</footer>
-
-
-<!-- =====================================
-     YOUTUBE PLAYER
-===================================== -->
-
-<div id="youtube-player"></div>
-
-
-<!-- =====================================
-     MUSIC PLAYER
-===================================== -->
-
-<div class="music-player">
-
-    <div class="player-main">
-
-        <div class="album" id="album">
-            ♥
-        </div>
-
-        <div>
-
-            <div
-                class="song-title"
-                id="songTitle"
-            >
-
-                Raja ♥ Shivani — Our Playlist
-
-            </div>
-
-            <div
-                class="song-status"
-                id="songStatus"
-            >
-
-                Connecting to YouTube...
-
-            </div>
-
-        </div>
-
-        <div class="controls">
-
-            <button
-                class="btn"
-                id="previous"
-                aria-label="Previous"
-            >
-
-                ◀◀
-
-            </button>
-
-            <button
-                class="btn play"
-                id="play"
-                aria-label="Play"
-            >
-
-                ▶
-
-            </button>
-
-            <button
-                class="btn"
-                id="next"
-                aria-label="Next"
-            >
-
-                ▶▶
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <div class="progress-wrap">
-
-        <span
-            class="time"
-            id="current"
-        >
-            0:00
-        </span>
-
-        <div
-            class="progress"
-            id="progress"
-        >
-
-            <div
-                class="progress-bar"
-                id="progressBar"
-            ></div>
-
-        </div>
-
-        <span
-            class="time"
-            id="duration"
-        >
-            0:00
-        </span>
-
-    </div>
-
-</div>
-
-
-<script>
-
-/* =========================================
-   RAJA ❤️ SHIVANI
-   YOUTUBE MUSIC PLAYER
-========================================= */
-
-
-/* Playlist */
-
-const PLAYLIST_ID =
-    "PLEw8-3-6R5VA";
-
-
-/* Player */
-
-let player = null;
-
-let youtubeReady = false;
-
-let progressTimer = null;
-
-
-/* Elements */
-
-const playButton =
-    document.getElementById("play");
-
-const previousButton =
-    document.getElementById("previous");
-
-const nextButton =
-    document.getElementById("next");
-
-const songTitle =
-    document.getElementById("songTitle");
-
-const songStatus =
-    document.getElementById("songStatus");
-
-const progress =
-    document.getElementById("progress");
-
-const progressBar =
-    document.getElementById("progressBar");
-
-const currentTime =
-    document.getElementById("current");
-
-const durationTime =
-    document.getElementById("duration");
-
-const album =
-    document.getElementById("album");
-
-
-/* =========================================
-   LOAD YOUTUBE IFRAME API
-========================================= */
-
-const youtubeScript =
-    document.createElement("script");
-
-youtubeScript.src =
-    "https://www.youtube.com/iframe_api";
-
-document.head.appendChild(youtubeScript);
-
-
-/* =========================================
-   YOUTUBE API READY
-========================================= */
-
-window.onYouTubeIframeAPIReady =
-function(){
-
-    player =
-        new YT.Player(
-            "youtube-player",
-            {
-
-                width:"200",
-
-                height:"200",
-
-                playerVars:{
-
-                    autoplay:0,
-
-                    controls:0,
-
-                    playsinline:1,
-
-                    rel:0,
-
-                    modestbranding:1,
-
-                    enablejsapi:1,
-
-                    listType:"playlist",
-
-                    list:PLAYLIST_ID
-
-                },
-
-                events:{
-
-                    onReady:
-                    youtubePlayerReady,
-
-                    onStateChange:
-                    youtubeStateChanged,
-
-                    onError:
-                    youtubeError
-
-                }
-
-            }
-        );
-
-};
-
-
-/* =========================================
-   READY
-========================================= */
-
-function youtubePlayerReady(){
-
-    youtubeReady = true;
-
-    songStatus.textContent =
-        "READY • PRESS PLAY";
-
-    updateSongName();
-
-    startProgressTimer();
-
-}
-
-
-/* =========================================
-   PLAYER STATE
-========================================= */
-
-function youtubeStateChanged(event){
-
-    if(
-        event.data ===
-        YT.PlayerState.PLAYING
-    ){
-
-        playButton.textContent =
-            "Ⅱ";
-
-        songStatus.textContent =
-            "NOW PLAYING";
-
-        album.classList.add(
-            "playing"
-        );
-
-        updateSongName();
-
-    }
-
-
-    else if(
-        event.data ===
-        YT.PlayerState.PAUSED
-    ){
-
-        playButton.textContent =
-            "▶";
-
-        songStatus.textContent =
-            "PAUSED";
-
-        album.classList.remove(
-            "playing"
-        );
-
-    }
-
-
-    else if(
-        event.data ===
-        YT.PlayerState.BUFFERING
-    ){
-
-        songStatus.textContent =
-            "LOADING SONG...";
-
-    }
-
-
-    else if(
-        event.data ===
-        YT.PlayerState.ENDED
-    ){
-
-        playButton.textContent =
-            "▶";
-
-        songStatus.textContent =
-            "SONG ENDED";
-
-        album.classList.remove(
-            "playing"
-        );
-
-    }
-
-}
-
-
-/* =========================================
-   ERROR
-========================================= */
-
-function youtubeError(event){
-
-    console.log(
-        "YouTube error:",
-        event.data
-    );
-
-    songStatus.textContent =
-        "YOUTUBE PLAYBACK ERROR";
-
-}
-
-
-/* =========================================
-   PLAY / PAUSE
-========================================= */
-
-playButton.addEventListener(
-    "click",
-    function(){
-
-        if(
-            !youtubeReady ||
-            !player
-        ){
-
-            songStatus.textContent =
-                "YOUTUBE LOADING...";
-
-            return;
-
-        }
-
-
-        const state =
-            player.getPlayerState();
-
-
-        if(
-            state ===
-            YT.PlayerState.PLAYING
-        ){
-
-            player.pauseVideo();
-
-        }
-
-        else{
-
-            player.playVideo();
-
-        }
-
-    }
-);
-
-
-/* =========================================
-   PREVIOUS
-========================================= */
-
-previousButton.addEventListener(
-    "click",
-    function(){
-
-        if(
-            !youtubeReady ||
-            !player
-        ){
-
-            return;
-
-        }
-
-        player.previousVideo();
-
-    }
-);
-
-
-/* =========================================
-   NEXT
-========================================= */
-
-nextButton.addEventListener(
-    "click",
-    function(){
-
-        if(
-            !youtubeReady ||
-            !player
-        ){
-
-            return;
-
-        }
-
-        player.nextVideo();
-
-    }
-);
-
-
-/* =========================================
-   UPDATE SONG TITLE
-========================================= */
-
-function updateSongName(){
-
-    if(
-        !youtubeReady ||
-        !player
-    ){
-
-        return;
-
-    }
-
-
-    try{
-
-        const video =
-            player.getVideoData();
-
-
-        if(
-            vi    font-weight:600;
-    letter-spacing:1px;
-}
-
-.logo span{
-    color:var(--gold);
-}
-
-.nav-right{
-    font-size:11px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    opacity:.65;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    padding:110px 7% 170px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-}
-
-.hero-content{
-    max-width:950px;
-}
-
-.small-title{
-    font-size:11px;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    color:var(--gold);
-    margin-bottom:25px;
-}
-
-h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(75px,13vw,175px);
-    line-height:.72;
-    font-weight:500;
-    letter-spacing:-7px;
-}
-
-h1 .raja{
+h1 .manish{
     display:block;
 }
 
@@ -1498,50 +160,49 @@ h1 .shivani{
 
 .hero-sub{
     max-width:650px;
-    margin:45px auto 0;
-    color:rgba(255,248,239,.67);
-    font-size:16px;
-    line-height:1.8;
+    margin:50px auto 0;
+    color:rgba(255,248,239,.64);
+    font-size:15px;
+    line-height:1.9;
 }
 
 .scroll{
     margin-top:50px;
-    font-size:10px;
+    font-size:9px;
     letter-spacing:4px;
     text-transform:uppercase;
-    opacity:.5;
+    opacity:.45;
 }
 
-/* HEART */
-
-.heart{
+.floating-heart{
     position:absolute;
+    right:12%;
     top:28%;
-    right:11%;
-    color:#e09ba5;
-    font-size:22px;
+    color:#e49ca8;
+    font-size:23px;
+    cursor:pointer;
     animation:heartFloat 4s ease-in-out infinite;
 }
 
 @keyframes heartFloat{
     50%{
         transform:translateY(-18px) rotate(8deg);
-        opacity:.6;
+        opacity:.55;
     }
 }
 
-/* MEMORY */
+/* MEMORIES */
 
 .memory-section{
-    padding:120px 7% 260px;
+    padding:120px 7% 240px;
 }
 
 .section-label{
     text-align:center;
-    font-size:10px;
+    color:var(--gold);
+    font-size:9px;
     letter-spacing:4px;
     text-transform:uppercase;
-    color:var(--gold);
     margin-bottom:22px;
 }
 
@@ -1563,7 +224,7 @@ h1 .shivani{
 .memory{
     min-height:230px;
     padding:32px;
-    border:1px solid rgba(255,255,255,.11);
+    border:1px solid rgba(255,255,255,.10);
     background:rgba(255,255,255,.045);
     backdrop-filter:blur(18px);
     border-radius:20px;
@@ -1573,11 +234,11 @@ h1 .shivani{
 .memory:hover{
     transform:translateY(-9px);
     background:rgba(255,255,255,.075);
-    border-color:rgba(215,173,105,.35);
+    border-color:rgba(216,179,107,.35);
 }
 
 .memory-number{
-    font-size:10px;
+    font-size:9px;
     color:var(--gold);
     letter-spacing:2px;
 }
@@ -1591,19 +252,19 @@ h1 .shivani{
 
 .memory p{
     margin-top:12px;
-    color:rgba(255,255,255,.53);
-    line-height:1.7;
+    color:rgba(255,255,255,.52);
     font-size:13px;
+    line-height:1.7;
 }
 
 /* QUOTE */
 
 .quote-section{
-    min-height:50vh;
+    min-height:55vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    padding:100px 20px 280px;
+    padding:100px 20px 270px;
     text-align:center;
 }
 
@@ -1612,7 +273,6 @@ h1 .shivani{
     font-family:'Cormorant Garamond',serif;
     font-size:clamp(35px,6vw,70px);
     line-height:1.05;
-    color:#fff5e7;
 }
 
 .quote span{
@@ -1623,13 +283,35 @@ h1 .shivani{
 .quote-author{
     margin-top:25px;
     color:var(--gold);
-    font-size:10px;
+    font-size:9px;
     letter-spacing:3px;
 }
 
-/* PLAYER */
+/* FOOTER */
 
-.player{
+footer{
+    padding:60px 20px 180px;
+    text-align:center;
+    color:rgba(255,255,255,.27);
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+/* YOUTUBE PLAYER */
+
+#youtube-player{
+    position:fixed;
+    width:200px;
+    height:200px;
+    left:-1000px;
+    bottom:0;
+    opacity:0;
+    pointer-events:none;
+}
+
+/* MUSIC PLAYER */
+
+.music-player{
     position:fixed;
     z-index:100;
     bottom:18px;
@@ -1637,9 +319,9 @@ h1 .shivani{
     transform:translateX(-50%);
     width:min(850px,calc(100% - 24px));
     padding:16px 20px;
+    border:1px solid rgba(255,255,255,.14);
     border-radius:20px;
-    border:1px solid rgba(255,255,255,.15);
-    background:rgba(20,13,15,.88);
+    background:rgba(20,13,15,.90);
     backdrop-filter:blur(25px);
     box-shadow:0 20px 70px rgba(0,0,0,.5);
 }
@@ -1661,7 +343,7 @@ h1 .shivani{
         radial-gradient(circle,#fff0d3 0 8%,transparent 9%),
         conic-gradient(from 0deg,#d9a65f,#a74d61,#d9a65f);
     box-shadow:0 5px 20px rgba(0,0,0,.4);
-    animation:albumSpin 8s linear infinite;
+    animation:spin 8s linear infinite;
     animation-play-state:paused;
 }
 
@@ -1669,7 +351,7 @@ h1 .shivani{
     animation-play-state:running;
 }
 
-@keyframes albumSpin{
+@keyframes spin{
     to{transform:rotate(360deg)}
 }
 
@@ -1683,7 +365,7 @@ h1 .shivani{
 
 .song-status{
     margin-top:5px;
-    color:rgba(255,255,255,.4);
+    color:rgba(255,255,255,.40);
     font-size:9px;
     letter-spacing:1.5px;
     text-transform:uppercase;
@@ -1748,26 +430,6 @@ h1 .shivani{
     background:#e1b86d;
 }
 
-/* YOUTUBE */
-
-#youtube-player{
-    position:fixed;
-    width:1px;
-    height:1px;
-    opacity:0;
-    pointer-events:none;
-}
-
-/* FOOTER */
-
-footer{
-    padding:60px 20px 180px;
-    text-align:center;
-    color:rgba(255,255,255,.3);
-    font-size:10px;
-    letter-spacing:2px;
-}
-
 /* MOBILE */
 
 @media(max-width:750px){
@@ -1793,7 +455,7 @@ footer{
         margin-left:25px;
     }
 
-    .heart{
+    .floating-heart{
         display:none;
     }
 
@@ -1810,7 +472,7 @@ footer{
         min-height:190px;
     }
 
-    .player{
+    .music-player{
         bottom:8px;
         padding:12px;
     }
@@ -1847,8 +509,13 @@ footer{
 </div>
 
 <nav>
-    <div class="logo">Raja <span>♥</span> Shivani</div>
-    <div class="nav-right">Our Little Universe</div>
+    <div class="logo">
+        Manish <span>♥</span> Shivani
+    </div>
+
+    <div class="nav-right">
+        Our Little Universe
+    </div>
 </nav>
 
 <section class="hero">
@@ -1860,7 +527,7 @@ footer{
         </div>
 
         <h1>
-            <span class="raja">Raja</span>
+            <span class="manish">Manish</span>
             <span class="shivani">Shivani</span>
         </h1>
 
@@ -1877,13 +544,17 @@ footer{
 
     </div>
 
-    <div class="heart">♥</div>
+    <div class="floating-heart">
+        ♥
+    </div>
 
 </section>
 
 <section class="memory-section">
 
-    <div class="section-label">01 — The memories</div>
+    <div class="section-label">
+        01 — The memories
+    </div>
 
     <h2 class="section-title">
         Things worth remembering.
@@ -1892,30 +563,57 @@ footer{
     <div class="memory-grid">
 
         <div class="memory">
-            <div class="memory-number">MEMORY 01</div>
-            <h3>Our Song</h3>
+
+            <div class="memory-number">
+                MEMORY 01
+            </div>
+
+            <h3>
+                Our Song
+            </h3>
+
             <p>
-                Every relationship eventually gets that one song
-                that somehow sounds different after you meet.
+                Every relationship eventually gets
+                that one song that somehow sounds
+                different after you meet.
             </p>
+
         </div>
 
         <div class="memory">
-            <div class="memory-number">MEMORY 02</div>
-            <h3>Just Us</h3>
+
+            <div class="memory-number">
+                MEMORY 02
+            </div>
+
+            <h3>
+                Just Us
+            </h3>
+
             <p>
                 Two people, countless conversations,
-                random laughs and moments that nobody else understands.
+                random laughs and moments that nobody
+                else understands.
             </p>
+
         </div>
 
         <div class="memory">
-            <div class="memory-number">MEMORY 03</div>
-            <h3>Forever</h3>
+
+            <div class="memory-number">
+                MEMORY 03
+            </div>
+
+            <h3>
+                Forever
+            </h3>
+
             <p>
-                Not because everything will always be perfect,
-                but because we choose each other again and again.
+                Not because everything will always
+                be perfect, but because we choose
+                each other again and again.
             </p>
+
         </div>
 
     </div>
@@ -1933,7 +631,7 @@ footer{
         </div>
 
         <div class="quote-author">
-            RAJA × SHIVANI
+            MANISH × SHIVANI
         </div>
 
     </div>
@@ -1941,14 +639,15 @@ footer{
 </section>
 
 <footer>
-    MADE WITH LOVE • RAJA ♥ SHIVANI
+    MADE WITH LOVE • MANISH ♥ SHIVANI
 </footer>
 
-<!-- YOUTUBE PLAYER -->
+<!-- YouTube player -->
 <div id="youtube-player"></div>
 
-<!-- MUSIC PLAYER -->
-<div class="player">
+<!-- Music player -->
+
+<div class="music-player">
 
     <div class="player-main">
 
@@ -1957,13 +656,15 @@ footer{
         </div>
 
         <div>
+
             <div class="song-title" id="songTitle">
-                Raja ♥ Shivani — Our Playlist
+                Manish ♥ Shivani — Our Playlist
             </div>
 
             <div class="song-status" id="songStatus">
-                Ready to play
+                Connecting to YouTube...
             </div>
+
         </div>
 
         <div class="controls">
@@ -1986,13 +687,22 @@ footer{
 
     <div class="progress-wrap">
 
-        <span class="time" id="current">0:00</span>
+        <span class="time" id="current">
+            0:00
+        </span>
 
         <div class="progress" id="progress">
-            <div class="progress-bar" id="progressBar"></div>
+
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+
         </div>
 
-        <span class="time" id="duration">0:00</span>
+        <span class="time" id="duration">
+            0:00
+        </span>
 
     </div>
 
@@ -2000,286 +710,411 @@ footer{
 
 <script>
 
-/* ============================================
-   YOUTUBE PLAYLIST
-============================================ */
-
 const PLAYLIST_ID = "PLEw8-3-6R5VA";
 
 let player = null;
-let ready = false;
-let timer = null;
+let youtubeReady = false;
+let progressTimer = null;
 
-const playButton = document.getElementById("play");
-const previousButton = document.getElementById("previous");
-const nextButton = document.getElementById("next");
+const playButton =
+    document.getElementById("play");
 
-const songTitle = document.getElementById("songTitle");
-const songStatus = document.getElementById("songStatus");
+const previousButton =
+    document.getElementById("previous");
 
-const progress = document.getElementById("progress");
-const progressBar = document.getElementById("progressBar");
+const nextButton =
+    document.getElementById("next");
 
-const currentTime = document.getElementById("current");
-const durationTime = document.getElementById("duration");
+const songTitle =
+    document.getElementById("songTitle");
 
-const album = document.getElementById("album");
+const songStatus =
+    document.getElementById("songStatus");
+
+const progress =
+    document.getElementById("progress");
+
+const progressBar =
+    document.getElementById("progressBar");
+
+const currentTime =
+    document.getElementById("current");
+
+const durationTime =
+    document.getElementById("duration");
+
+const album =
+    document.getElementById("album");
 
 
 /* Load YouTube API */
 
-const youtubeScript = document.createElement("script");
+const youtubeScript =
+    document.createElement("script");
 
-youtubeScript.src = "https://www.youtube.com/iframe_api";
+youtubeScript.src =
+    "https://www.youtube.com/iframe_api";
 
 document.head.appendChild(youtubeScript);
 
 
-/* YouTube API callback */
+/* YouTube API */
 
-window.onYouTubeIframeAPIReady = function(){
+window.onYouTubeIframeAPIReady =
+function(){
 
-    player = new YT.Player("youtube-player",{
+    player = new YT.Player(
+        "youtube-player",
+        {
 
-        width:"1",
-        height:"1",
+            width:"200",
+            height:"200",
 
-        playerVars:{
-            autoplay:0,
-            controls:0,
-            playsinline:1,
-            rel:0,
-            modestbranding:1,
-            listType:"playlist",
-            list:PLAYLIST_ID
-        },
+            playerVars:{
+                autoplay:0,
+                controls:0,
+                playsinline:1,
+                rel:0,
+                modestbranding:1,
+                enablejsapi:1,
+                listType:"playlist",
+                list:PLAYLIST_ID
+            },
 
-        events:{
-            onReady:onReady,
-            onStateChange:onStateChange,
-            onError:onError
+            events:{
+
+                onReady:function(){
+
+                    youtubeReady = true;
+
+                    songStatus.textContent =
+                        "READY • PRESS PLAY";
+
+                    updateSong();
+
+                    startProgress();
+
+                },
+
+                onStateChange:function(event){
+
+                    if(
+                        event.data ===
+                        YT.PlayerState.PLAYING
+                    ){
+
+                        playButton.textContent =
+                            "Ⅱ";
+
+                        songStatus.textContent =
+                            "NOW PLAYING";
+
+                        album.classList.add(
+                            "playing"
+                        );
+
+                        updateSong();
+
+                    }
+
+                    else if(
+                        event.data ===
+                        YT.PlayerState.PAUSED
+                    ){
+
+                        playButton.textContent =
+                            "▶";
+
+                        songStatus.textContent =
+                            "PAUSED";
+
+                        album.classList.remove(
+                            "playing"
+                        );
+
+                    }
+
+                    else if(
+                        event.data ===
+                        YT.PlayerState.BUFFERING
+                    ){
+
+                        songStatus.textContent =
+                            "LOADING SONG...";
+
+                    }
+
+                    else if(
+                        event.data ===
+                        YT.PlayerState.ENDED
+                    ){
+
+                        playButton.textContent =
+                            "▶";
+
+                        songStatus.textContent =
+                            "SONG ENDED";
+
+                        album.classList.remove(
+                            "playing"
+                        );
+
+                    }
+
+                },
+
+                onError:function(event){
+
+                    console.log(
+                        "YouTube error:",
+                        event.data
+                    );
+
+                    songStatus.textContent =
+                        "YOUTUBE PLAYBACK ERROR";
+
+                }
+
+            }
+
         }
-
-    });
+    );
 
 };
 
 
-/* READY */
-
-function onReady(){
-
-    ready = true;
-
-    songStatus.textContent = "READY • PRESS PLAY";
-
-    updateSong();
-
-    startTimer();
-
-}
-
-
-/* STATE */
-
-function onStateChange(event){
-
-    if(event.data === YT.PlayerState.PLAYING){
-
-        playButton.textContent = "Ⅱ";
-
-        songStatus.textContent = "NOW PLAYING";
-
-        album.classList.add("playing");
-
-        updateSong();
-
-    }
-
-    else if(event.data === YT.PlayerState.PAUSED){
-
-        playButton.textContent = "▶";
-
-        songStatus.textContent = "PAUSED";
-
-        album.classList.remove("playing");
-
-    }
-
-    else if(event.data === YT.PlayerState.ENDED){
-
-        playButton.textContent = "▶";
-
-        songStatus.textContent = "ENDED";
-
-        album.classList.remove("playing");
-
-    }
-
-    else if(event.data === YT.PlayerState.BUFFERING){
-
-        songStatus.textContent = "LOADING...";
-
-    }
-
-}
-
-
-/* ERROR */
-
-function onError(){
-
-    songStatus.textContent = "PLAYBACK ERROR";
-
-}
-
-
 /* PLAY / PAUSE */
 
-playButton.addEventListener("click",function(){
+playButton.addEventListener(
+    "click",
+    function(){
 
-    if(!ready) return;
+        if(
+            !youtubeReady ||
+            !player
+        ){
 
-    const state = player.getPlayerState();
+            songStatus.textContent =
+                "YOUTUBE LOADING...";
 
-    if(state === YT.PlayerState.PLAYING){
+            return;
+        }
 
-        player.pauseVideo();
+        const state =
+            player.getPlayerState();
 
-    }else{
+        if(
+            state ===
+            YT.PlayerState.PLAYING
+        ){
 
-        player.playVideo();
+            player.pauseVideo();
+
+        }else{
+
+            player.playVideo();
+
+        }
 
     }
-
-});
+);
 
 
 /* PREVIOUS */
 
-previousButton.addEventListener("click",function(){
+previousButton.addEventListener(
+    "click",
+    function(){
 
-    if(!ready) return;
+        if(
+            youtubeReady &&
+            player
+        ){
 
-    player.previousVideo();
+            player.previousVideo();
 
-});
+        }
+
+    }
+);
 
 
 /* NEXT */
 
-nextButton.addEventListener("click",function(){
+nextButton.addEventListener(
+    "click",
+    function(){
 
-    if(!ready) return;
+        if(
+            youtubeReady &&
+            player
+        ){
 
-    player.nextVideo();
-
-});
-
-
-/* SONG TITLE */
-
-function updateSong(){
-
-    if(!ready) return;
-
-    try{
-
-        const data = player.getVideoData();
-
-        if(data && data.title){
-
-            songTitle.textContent = data.title;
+            player.nextVideo();
 
         }
 
-    }catch(e){}
+    }
+);
+
+
+/* SONG NAME */
+
+function updateSong(){
+
+    if(
+        !youtubeReady ||
+        !player
+    ){
+
+        return;
+    }
+
+    try{
+
+        const data =
+            player.getVideoData();
+
+        if(
+            data &&
+            data.title
+        ){
+
+            songTitle.textContent =
+                data.title;
+
+        }
+
+    }catch(error){
+
+        console.log(error);
+
+    }
 
 }
 
 
 /* PROGRESS */
 
-function startTimer(){
+function startProgress(){
 
-    clearInterval(timer);
+    clearInterval(
+        progressTimer
+    );
 
-    timer = setInterval(function(){
+    progressTimer =
+        setInterval(
+            function(){
 
-        if(!ready) return;
+                if(
+                    !youtubeReady ||
+                    !player
+                ){
 
-        try{
+                    return;
+                }
 
-            const duration = player.getDuration();
+                try{
 
-            const current = player.getCurrentTime();
+                    const duration =
+                        player.getDuration();
 
-            if(duration > 0){
+                    const current =
+                        player.getCurrentTime();
 
-                const percent =
-                    (current / duration) * 100;
+                    if(duration > 0){
 
-                progressBar.style.width =
-                    percent + "%";
+                        const percent =
+                            (current / duration) * 100;
 
-                currentTime.textContent =
-                    formatTime(current);
+                        progressBar.style.width =
+                            percent + "%";
 
-                durationTime.textContent =
-                    formatTime(duration);
+                        currentTime.textContent =
+                            formatTime(current);
 
-            }
+                        durationTime.textContent =
+                            formatTime(duration);
 
-            updateSong();
+                    }
 
-        }catch(e){}
+                    updateSong();
 
-    },500);
+                }catch(error){
+
+                    console.log(error);
+
+                }
+
+            },
+            500
+        );
 
 }
 
 
 /* SEEK */
 
-progress.addEventListener("click",function(event){
+progress.addEventListener(
+    "click",
+    function(event){
 
-    if(!ready) return;
+        if(
+            !youtubeReady ||
+            !player
+        ){
 
-    const rect =
-        progress.getBoundingClientRect();
+            return;
+        }
 
-    const percent =
-        (event.clientX - rect.left) / rect.width;
+        const rect =
+            progress.getBoundingClientRect();
 
-    const duration =
-        player.getDuration();
+        const percent =
+            (
+                event.clientX -
+                rect.left
+            ) / rect.width;
 
-    if(duration){
+        const duration =
+            player.getDuration();
 
-        player.seekTo(
-            duration * percent,
-            true
-        );
+        if(duration > 0){
+
+            player.seekTo(
+                duration * percent,
+                true
+            );
+
+        }
 
     }
+);
 
-});
 
-
-/* TIME FORMAT */
+/* TIME */
 
 function formatTime(seconds){
 
-    if(!seconds || isNaN(seconds))
+    if(
+        !seconds ||
+        isNaN(seconds)
+    ){
+
         return "0:00";
 
-    seconds = Math.floor(seconds);
+    }
+
+    seconds =
+        Math.floor(seconds);
 
     const minutes =
         Math.floor(seconds / 60);
 
     const secs =
-        String(seconds % 60).padStart(2,"0");
+        String(
+            seconds % 60
+        ).padStart(2,"0");
 
     return minutes + ":" + secs;
 
@@ -2288,817 +1123,73 @@ function formatTime(seconds){
 
 /* SPACEBAR */
 
-document.addEventListener("keydown",function(event){
+document.addEventListener(
+    "keydown",
+    function(event){
 
-    if(event.code === "Space"){
+        if(
+            event.code === "Space"
+        ){
 
-        event.preventDefault();
+            event.preventDefault();
 
-        playButton.click();
+            playButton.click();
 
-    }
-
-    if(event.key.toLowerCase() === "n"){
-
-        nextButton.click();
-
-    }
-
-    if(event.key.toLowerCase() === "p"){
-
-        previousButton.click();
-
-    }
-
-});
-
-
-/* HEART CLICK */
-
-document.querySelector(".heart").addEventListener("click",function(){
-
-    this.animate(
-        [
-            {transform:"scale(1)"},
-            {transform:"scale(1.5)"},
-            {transform:"scale(1)"}
-        ],
-        {
-            duration:500
         }
+
+        if(
+            event.key.toLowerCase() === "n"
+        ){
+
+            nextButton.click();
+
+        }
+
+        if(
+            event.key.toLowerCase() === "p"
+        ){
+
+            previousButton.click();
+
+        }
+
+    }
+);
+
+
+/* HEART */
+
+const heart =
+    document.querySelector(
+        ".floating-heart"
     );
 
-});
+heart.addEventListener(
+    "click",
+    function(){
+
+        this.animate(
+            [
+                {
+                    transform:"scale(1)"
+                },
+                {
+                    transform:"scale(1.5)"
+                },
+                {
+                    transform:"scale(1)"
+                }
+            ],
+            {
+                duration:500
+            }
+        );
+
+    }
+);
 
 </script>
 
 </body>
 </html>
 ```
-      position: relative;
-    }
-
-    .hero {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 8px 13px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,.045);
-      color: #d7c695;
-      font-family: "DM Mono", monospace;
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      backdrop-filter: blur(10px);
-      margin-bottom: 25px;
-    }
-
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      background: #87a85d;
-      border-radius: 50%;
-      box-shadow: 0 0 12px #87a85d;
-      animation: blink 1.6s infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: .3; }
-    }
-
-    h1 {
-      font-size: clamp(4rem, 10vw, 8.5rem);
-      line-height: .8;
-      letter-spacing: -7px;
-      font-weight: 800;
-      color: var(--cream);
-      text-shadow:
-        5px 5px 0 #70462c,
-        9px 9px 0 rgba(0,0,0,.28);
-    }
-
-    h1 span {
-      display: block;
-      color: var(--orange);
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-weight: 500;
-      letter-spacing: -5px;
-      transform: rotate(-2deg);
-      margin-left: 25px;
-    }
-
-    .subtitle {
-      max-width: 570px;
-      margin-top: 32px;
-      color: #c7b991;
-      font-size: 17px;
-      line-height: 1.75;
-    }
-
-    .hero-meta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .tag {
-      padding: 8px 12px;
-      border: 1px solid rgba(244,232,193,.16);
-      background: rgba(255,255,255,.035);
-      color: #a99b77;
-      font-family: "DM Mono", monospace;
-      font-size: 10px;
-      border-radius: 5px;
-    }
-
-    /* Cassette */
-    .cassette-stage {
-      position: relative;
-      height: 540px;
-      display: grid;
-      place-items: center;
-      perspective: 1000px;
-    }
-
-    .cassette {
-      width: min(430px, 80vw);
-      aspect-ratio: 1.52;
-      position: relative;
-      border-radius: 18px;
-      transform: rotate(5deg) rotateX(8deg);
-      background:
-        linear-gradient(135deg, #bb7a43, #7e4a2e 45%, #482d21);
-      border: 3px solid #d09559;
-      box-shadow:
-        0 45px 70px rgba(0,0,0,.5),
-        inset 0 0 0 5px rgba(48,26,17,.55),
-        inset 0 0 40px rgba(255,190,100,.08);
-      animation: cassetteFloat 5s ease-in-out infinite;
-    }
-
-    @keyframes cassetteFloat {
-      0%,100% { transform: rotate(5deg) rotateX(8deg) translateY(0); }
-      50% { transform: rotate(3deg) rotateX(8deg) translateY(-13px); }
-    }
-
-    .cassette::before {
-      content: "VIBE SONGH";
-      position: absolute;
-      left: 7%;
-      top: 9%;
-      width: 86%;
-      height: 31%;
-      border-radius: 7px;
-      display: grid;
-      place-items: center;
-      color: #3b2418;
-      background: #e7d397;
-      font-family: "Press Start 2P", monospace;
-      font-size: clamp(9px, 1.5vw, 13px);
-      box-shadow: inset 0 0 0 2px rgba(52,31,20,.2);
-    }
-
-    .cassette::after {
-      content: "90'S KIDS • SIDE A";
-      position: absolute;
-      top: 15%;
-      right: 10%;
-      color: rgba(60,35,23,.65);
-      font-family: "DM Mono", monospace;
-      font-size: 7px;
-    }
-
-    .window {
-      position: absolute;
-      left: 17%;
-      right: 17%;
-      bottom: 18%;
-      height: 26%;
-      border-radius: 60px;
-      background: #211915;
-      border: 5px solid #613b28;
-      box-shadow: inset 0 0 20px #000;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      overflow: hidden;
-    }
-
-    .reel {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle, #1a1512 0 13%, #b47a48 14% 19%, #2b201b 20% 31%, #9c6840 32% 38%, #201713 39% 100%);
-      border: 4px solid #a56c40;
-      box-shadow: inset 0 0 12px #000;
-    }
-
-    .reel::after {
-      content: "";
-      display: block;
-      width: 15px;
-      height: 15px;
-      margin: 25px auto;
-      border-radius: 50%;
-      background: #191310;
-    }
-
-    .cassette-label {
-      position: absolute;
-      left: 10%;
-      bottom: 7%;
-      color: #d6b979;
-      font-family: "DM Mono", monospace;
-      font-size: 8px;
-      letter-spacing: 2px;
-    }
-
-    .sticker {
-      position: absolute;
-      background: var(--cream);
-      color: #6d3925;
-      padding: 9px 12px;
-      font-family: "DM Mono", monospace;
-      font-size: 9px;
-      box-shadow: 4px 5px 0 rgba(0,0,0,.25);
-    }
-
-    .sticker.one {
-      top: 12%;
-      right: -2%;
-      transform: rotate(8deg);
-    }
-
-    .sticker.two {
-      bottom: 8%;
-      left: -4%;
-      transform: rotate(-7deg);
-    }
-
-    /* Memories */
-    .memories {
-      padding: 50px 0 300px;
-    }
-
-    .section-label {
-      font-family: "DM Mono", monospace;
-      color: #917e5d;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
-      text-transform: uppercase;
-    }
-
-    .memory-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .memory {
-      min-height: 145px;
-      padding: 20px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,.035);
-      backdrop-filter: blur(12px);
-      border-radius: 10px;
-      transition: .3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .memory:hover {
-      transform: translateY(-6px) rotate(-1deg);
-      background: rgba(255,255,255,.065);
-      border-color: rgba(244,232,193,.3);
-    }
-
-    .memory-number {
-      color: #765f45;
-      font-family: "DM Mono", monospace;
-      font-size: 10px;
-    }
-
-    .memory h3 {
-      margin-top: 25px;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #dfce9f;
-    }
-
-    .memory p {
-      margin-top: 7px;
-      color: #8f8267;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    /* Quote */
-    .quote-wrap {
-      margin: 70px 0;
-      text-align: center;
-      min-height: 120px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .quote {
-      font-family: Georgia, serif;
-      font-size: clamp(25px, 4vw, 45px);
-      color: #ddcc9b;
-      transition: opacity .4s, transform .4s;
-    }
-
-    .quote.fade {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    .quote-source {
-      margin-top: 15px;
-      color: #77684e;
-      font-family: "DM Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 50px 0 200px;
-      color: #5d513e;
-      font-family: "DM Mono", monospace;
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-
-    /* Player */
-    .player {
-      position: fixed;
-      z-index: 90;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(900px, calc(100% - 24px));
-      padding: 15px 18px;
-      border: 1px solid rgba(244,232,193,.18);
-      border-radius: 18px;
-      background: rgba(22,17,13,.83);
-      backdrop-filter: blur(25px) saturate(120%);
-      box-shadow: 0 20px 60px rgba(0,0,0,.5);
-    }
-
-    .player-top {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .mini-cassette {
-      width: 45px;
-      height: 32px;
-      border-radius: 5px;
-      background: #a8683e;
-      position: relative;
-      box-shadow: inset 0 0 0 2px #cf9159;
-    }
-
-    .mini-cassette::before,
-    .mini-cassette::after {
-      content: "";
-      position: absolute;
-      width: 11px;
-      height: 11px;
-      top: 10px;
-      border-radius: 50%;
-      background: #261a15;
-      border: 2px solid #d09a64;
-    }
-
-    .mini-cassette::before { left: 7px; }
-    .mini-cassette::after { right: 7px; }
-
-    .track-info {
-      min-width: 0;
-    }
-
-    .track-name {
-      font-size: 13px;
-      font-weight: 600;
-      color: #ead9aa;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .track-status {
-      margin-top: 4px;
-      font-family: "DM Mono", monospace;
-      font-size: 9px;
-      color: #796a50;
-    }
-
-    .controls {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .control {
-      width: 37px;
-      height: 37px;
-      border-radius: 50%;
-      border: 1px solid rgba(244,232,193,.15);
-      color: #dbc998;
-      background: rgba(255,255,255,.045);
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      transition: .2s ease;
-      font-size: 13px;
-    }
-
-    .control:hover {
-      transform: scale(1.08);
-      background: rgba(255,255,255,.1);
-    }
-
-    .control.play {
-      width: 43px;
-      height: 43px;
-      color: #2b1b13;
-      background: #d8bd7c;
-      border: none;
-      font-size: 15px;
-    }
-
-    .progress-area {
-      margin-top: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .time {
-      width: 32px;
-      color: #695b47;
-      font-family: "DM Mono", monospace;
-      font-size: 8px;
-    }
-
-    .progress {
-      height: 3px;
-      flex: 1;
-      background: #3a3026;
-      border-radius: 10px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .progress-bar {
-      width: 0%;
-      height: 100%;
-      background: #d2b875;
-      transition: width .2s linear;
-    }
-
-    #youtube-player {
-      position: fixed;
-      width: 1px;
-      height: 1px;
-      opacity: 0;
-      pointer-events: none;
-      bottom: 0;
-      right: 0;
-    }
-
-    .key-hint {
-      position: fixed;
-      z-index: 10;
-      right: 20px;
-      top: 20px;
-      color: #655843;
-      font-family: "DM Mono", monospace;
-      font-size: 9px;
-      opacity: .7;
-    }
-
-    .vinyl-note {
-      position: fixed;
-      z-index: 5;
-      font-size: 30px;
-      pointer-events: none;
-      opacity: 0;
-    }
-
-    /* Responsive */
-    @media (max-width: 850px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      header {
-        padding-top: 80px;
-      }
-
-      .cassette-stage {
-        height: 400px;
-      }
-
-      .memory-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      h1 {
-        font-size: clamp(4rem, 17vw, 7rem);
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: min(100% - 28px, 1180px);
-      }
-
-      .memory-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .memory {
-        min-height: 125px;
-      }
-
-      .memory h3 {
-        font-size: 16px;
-      }
-
-      .player {
-        bottom: 8px;
-        padding: 12px;
-      }
-
-      .player-top {
-        gap: 9px;
-      }
-
-      .mini-cassette {
-        display: none;
-      }
-
-      .controls .control:not(.play) {
-        width: 32px;
-        height: 32px;
-      }
-
-      .control.play {
-        width: 39px;
-        height: 39px;
-      }
-
-      .key-hint {
-        display: none;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="ambient">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
-  </div>
-
-  <div class="key-hint">PRESS SPACE • REWIND THE FEELS</div>
-
-  <main>
-    <header>
-      <div class="container hero">
-
-        <div>
-          <div class="eyebrow">
-            <span class="status-dot"></span>
-            SIDE A • MEMORY LOADED
-          </div>
-
-          <h1>
-            VIBE
-            <span>SONGH</span>
-          </h1>
-
-          <p class="subtitle">
-            For the kids who grew up when a song wasn't just a song.
-            It was a cassette rewound with a pencil, a late-night radio,
-            a school crush, a rainy-window bus ride and a whole damn memory.
-          </p>
-
-          <div class="hero-meta">
-            <span class="tag">1990 — 1999</span>
-            <span class="tag">KUMAR SANU ERA</span>
-            <span class="tag">FULL VOLUME</span>
-            <span class="tag">NO SKIP</span>
-          </div>
-        </div>
-
-        <div class="cassette-stage">
-          <div class="sticker one">PLAY IT LOUD!</div>
-
-          <div class="cassette">
-            <div class="window">
-              <div class="reel"></div>
-              <div class="reel"></div>
-            </div>
-
-            <div class="cassette-label">
-              REC • 90's MIX • ORIGINAL
-            </div>
-          </div>
-
-          <div class="sticker two">₹20 CASSETTE<br>SHOP SPECIAL</div>
-        </div>
-
-      </div>
-    </header>
-
-    <section class="memories">
-      <div class="container">
-
-        <div class="section-label">/// Things we somehow remember perfectly</div>
-
-        <div class="memory-grid">
-          <div class="memory">
-            <div class="memory-number">01 / SOUND</div>
-            <h3>Radio wali feeling</h3>
-            <p>Waiting for your favourite song and praying nobody talks over it.</p>
-          </div>
-
-          <div class="memory">
-            <div class="memory-number">02 / OBJECT</div>
-            <h3>Pencil rewind</h3>
-            <p>Because batteries were expensive and the cassette deserved another chance.</p>
-          </div>
-
-          <div class="memory">
-            <div class="memory-number">03 / ROMANCE</div>
-            <h3>Dear diary...</h3>
-            <p>One song. One name. Suddenly every lyric made perfect sense.</p>
-          </div>
-
-          <div class="memory">
-            <div class="memory-number">04 / VIBE</div>
-            <h3>Sunday afternoon</h3>
-            <p>Doordarshan on TV, chai in the kitchen, and nowhere you needed to be.</p>
-          </div>
-        </div>
-
-        <div class="quote-wrap">
-          <div class="quote" id="quote">
-            “Some songs don't play. They remember for you.”
-          </div>
-          <div class="quote-source" id="quoteSource">
-            — 90'S KIDS MEMORY DEPARTMENT
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <footer>
-      MADE FOR THE GENERATION THAT KNEW THE SOUND OF A CASSETTE CLICKING INTO PLACE.
-      <br><br>
-      SIDE A • SIDE B • SAME MEMORIES
-    </footer>
-  </main>
-
-  <!-- Invisible YouTube player -->
-  <div id="youtube-player"></div>
-
-  <!-- Music Player -->
-  <div class="player">
-    <div class="player-top">
-
-      <div class="mini-cassette"></div>
-
-      <div class="track-info">
-        <div class="track-name" id="trackName">Vibe Songh — Loading...</div>
-        <div class="track-status" id="trackStatus">INSERTING CASSETTE...</div>
-      </div>
-
-      <div class="controls">
-        <button class="control" id="prevBtn" aria-label="Previous">◀◀</button>
-        <button class="control play" id="playBtn" aria-label="Play">▶</button>
-        <button class="control" id="nextBtn" aria-label="Next">▶▶</button>
-      </div>
-
-    </div>
-
-    <div class="progress-area">
-      <span class="time" id="currentTime">0:00</span>
-
-      <div class="progress" id="progress">
-        <div class="progress-bar" id="progressBar"></div>
-      </div>
-
-      <span class="time" id="duration">0:00</span>
-    </div>
-  </div>
-
-  <script>
-    /*
-      ============================================================
-      VIBE SONGH — 90's KIDS
-      YouTube playlist:
-      PLEw8-3-6R5VA
-      ============================================================
-    */
-
-    const PLAYLIST_ID = "PLEw8-3-6R5VA";
-
-    let player;
-    let isReady = false;
-    let progressTimer;
-
-    const playBtn = document.getElementById("playBtn");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const trackName = document.getElementById("trackName");
-    const trackStatus = document.getElementById("trackStatus");
-    const progressBar = document.getElementById("progressBar");
-    const progress = document.getElementById("progress");
-    const currentTimeEl = document.getElementById("currentTime");
-    const durationEl = document.getElementById("duration");
-
-    /*
-      Load YouTube IFrame API
-    */
-    const tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
-
-    window.onYouTubeIframeAPIReady = function () {
-      player = new YT.Player("youtube-player", {
-        height: "1",
-        width: "1",
-        playerVars: {
-          listType: "playlist",
-          list: PLAYLIST_ID,
-          autoplay: 0,
-          controls: 0,
-          playsinline: 1,
-          rel: 0,
-          modestbranding: 1
-        },
-        events: {
-          onReady: onPlayerReady,
-          onStateChange: onPlayerStateChange,
-          onError: onPlayerError
-        }
-      });
-    };
-
-    function onPlayerReady() {
-      isReady = true;
-
-      trackStatus.textContent = "READY • PRESS PLAY";
-
-      setTimeout(() => {
-        updateTrackInfo();
-      }, 500);
-
-      startProgressLoop();
-    }
-
-    function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PLAYING) {
-        playBtn.textContent = "Ⅱ";
-        trackStatus.textContent = "NOW PLAYING • SIDE A";
-        updateTrackInfo();
-      }
-
-      if (event.data === YT.PlayerState.PAUSED) {
-        playBtn.textContent = "▶";
-        trackStatus.textContent = "PAUSED • TAPE WAITING";
-      }
-
-      if (event.data === YT.PlayerState.ENDED) {
-        playBtn.textContent = "▶";
-        trackStatus.textContent = "TRACK ENDED • NEXT MEMORY";
-        updateTrackInfo();
-      }
-
-      if (event.data === YT.PlayerState.BUFFERING) {
-        
