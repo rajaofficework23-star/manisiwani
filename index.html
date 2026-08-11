@@ -1,107 +1,1005 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vibe Songh — 90's Kids</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap');
+<title>Raja ❤️ Shivani</title>
 
-    :root {
-      --cream: #f4e8c1;
-      --paper: #ead9a8;
-      --brown: #3a2418;
-      --red: #9e3028;
-      --orange: #d47a32;
-      --green: #526344;
-      --dark: #171411;
-      --glass: rgba(31, 25, 19, 0.76);
-      --border: rgba(244, 232, 193, 0.22);
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --cream:#fff8ef;
+    --gold:#d7ad69;
+    --pink:#e8a0a9;
+    --dark:#120c0e;
+    --glass:rgba(255,255,255,.09);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#120c0e;
+    color:white;
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(190,72,91,.28),transparent 32%),
+        radial-gradient(circle at 80% 70%,rgba(218,168,85,.20),transparent 30%),
+        linear-gradient(135deg,#120c0e,#281519 50%,#100a0c);
+}
+
+.background::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.08;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.16;
+    animation:float 12s ease-in-out infinite alternate;
+}
+
+.glow.one{
+    background:#d45d71;
+    top:-200px;
+    left:-150px;
+}
+
+.glow.two{
+    background:#d6a44d;
+    right:-180px;
+    bottom:-150px;
+    animation-delay:-5s;
+}
+
+@keyframes float{
+    to{
+        transform:translate(70px,50px) scale(1.15);
+    }
+}
+
+/* NAV */
+
+nav{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:28px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+}
+
+.logo{
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-right{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:.65;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    padding:110px 7% 170px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero-content{
+    max-width:950px;
+}
+
+.small-title{
+    font-size:11px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:25px;
+}
+
+h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(75px,13vw,175px);
+    line-height:.72;
+    font-weight:500;
+    letter-spacing:-7px;
+}
+
+h1 .raja{
+    display:block;
+}
+
+h1 .shivani{
+    display:block;
+    color:transparent;
+    -webkit-text-stroke:1px rgba(255,248,239,.85);
+    font-style:italic;
+    margin-left:70px;
+}
+
+.hero-sub{
+    max-width:650px;
+    margin:45px auto 0;
+    color:rgba(255,248,239,.67);
+    font-size:16px;
+    line-height:1.8;
+}
+
+.scroll{
+    margin-top:50px;
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    opacity:.5;
+}
+
+/* HEART */
+
+.heart{
+    position:absolute;
+    top:28%;
+    right:11%;
+    color:#e09ba5;
+    font-size:22px;
+    animation:heartFloat 4s ease-in-out infinite;
+}
+
+@keyframes heartFloat{
+    50%{
+        transform:translateY(-18px) rotate(8deg);
+        opacity:.6;
+    }
+}
+
+/* MEMORY */
+
+.memory-section{
+    padding:120px 7% 260px;
+}
+
+.section-label{
+    text-align:center;
+    font-size:10px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:22px;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(45px,7vw,85px);
+    font-weight:500;
+}
+
+.memory-grid{
+    max-width:1100px;
+    margin:70px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.memory{
+    min-height:230px;
+    padding:32px;
+    border:1px solid rgba(255,255,255,.11);
+    background:rgba(255,255,255,.045);
+    backdrop-filter:blur(18px);
+    border-radius:20px;
+    transition:.4s ease;
+}
+
+.memory:hover{
+    transform:translateY(-9px);
+    background:rgba(255,255,255,.075);
+    border-color:rgba(215,173,105,.35);
+}
+
+.memory-number{
+    font-size:10px;
+    color:var(--gold);
+    letter-spacing:2px;
+}
+
+.memory h3{
+    margin-top:45px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    font-weight:500;
+}
+
+.memory p{
+    margin-top:12px;
+    color:rgba(255,255,255,.53);
+    line-height:1.7;
+    font-size:13px;
+}
+
+/* QUOTE */
+
+.quote-section{
+    min-height:50vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:100px 20px 280px;
+    text-align:center;
+}
+
+.quote{
+    max-width:850px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(35px,6vw,70px);
+    line-height:1.05;
+    color:#fff5e7;
+}
+
+.quote span{
+    color:var(--pink);
+    font-style:italic;
+}
+
+.quote-author{
+    margin-top:25px;
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+/* PLAYER */
+
+.player{
+    position:fixed;
+    z-index:100;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(850px,calc(100% - 24px));
+    padding:16px 20px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(20,13,15,.88);
+    backdrop-filter:blur(25px);
+    box-shadow:0 20px 70px rgba(0,0,0,.5);
+}
+
+.player-main{
+    display:grid;
+    grid-template-columns:52px 1fr auto;
+    gap:15px;
+    align-items:center;
+}
+
+.album{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:
+        radial-gradient(circle,#fff0d3 0 8%,transparent 9%),
+        conic-gradient(from 0deg,#d9a65f,#a74d61,#d9a65f);
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
+    animation:albumSpin 8s linear infinite;
+    animation-play-state:paused;
+}
+
+.album.playing{
+    animation-play-state:running;
+}
+
+@keyframes albumSpin{
+    to{transform:rotate(360deg)}
+}
+
+.song-title{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    font-size:13px;
+    font-weight:600;
+}
+
+.song-status{
+    margin-top:5px;
+    color:rgba(255,255,255,.4);
+    font-size:9px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.controls{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.btn{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.06);
+    color:white;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:rgba(255,255,255,.13);
+}
+
+.btn.play{
+    width:46px;
+    height:46px;
+    background:#e1b86d;
+    color:#1a1010;
+    border:none;
+    font-size:15px;
+}
+
+.progress-wrap{
+    margin-top:12px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.time{
+    width:30px;
+    font-size:8px;
+    color:rgba(255,255,255,.35);
+}
+
+.progress{
+    height:3px;
+    flex:1;
+    background:rgba(255,255,255,.12);
+    border-radius:10px;
+    cursor:pointer;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#e1b86d;
+}
+
+/* YOUTUBE */
+
+#youtube-player{
+    position:fixed;
+    width:1px;
+    height:1px;
+    opacity:0;
+    pointer-events:none;
+}
+
+/* FOOTER */
+
+footer{
+    padding:60px 20px 180px;
+    text-align:center;
+    color:rgba(255,255,255,.3);
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    nav{
+        padding:22px 20px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    .nav-right{
+        display:none;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .hero{
+        padding:110px 20px 150px;
     }
 
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      color: var(--cream);
-      background:
-        radial-gradient(circle at 15% 15%, rgba(212, 122, 50, .17), transparent 25%),
-        radial-gradient(circle at 85% 20%, rgba(158, 48, 40, .16), transparent 25%),
-        linear-gradient(135deg, #18130f, #2b2118 48%, #14110e);
-      font-family: Inter, sans-serif;
+    h1{
+        font-size:22vw;
+        letter-spacing:-4px;
     }
 
-    /* Grain */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 100;
-      opacity: .075;
-      background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
-      mix-blend-mode: screen;
+    h1 .shivani{
+        margin-left:25px;
     }
 
-    /* Background glow */
-    .ambient {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: -1;
+    .heart{
+        display:none;
     }
 
-    .orb {
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: .12;
-      animation: drift 12s ease-in-out infinite alternate;
+    .memory-section{
+        padding:80px 20px 220px;
     }
 
-    .orb.one {
-      background: var(--orange);
-      top: -180px;
-      left: -120px;
+    .memory-grid{
+        grid-template-columns:1fr;
+        gap:12px;
     }
 
-    .orb.two {
-      background: var(--red);
-      right: -180px;
-      bottom: 5%;
-      animation-delay: -5s;
+    .memory{
+        min-height:190px;
     }
 
-    @keyframes drift {
-      from { transform: translate(0, 0) scale(1); }
-      to { transform: translate(70px, 40px) scale(1.15); }
+    .player{
+        bottom:8px;
+        padding:12px;
     }
 
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: auto;
+    .player-main{
+        grid-template-columns:45px 1fr auto;
+        gap:10px;
     }
 
-    /* Header */
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 60px 0 180px;
+    .album{
+        width:45px;
+        height:45px;
+    }
+
+    .btn:not(.play){
+        width:32px;
+        height:32px;
+        font-size:10px;
+    }
+
+    .btn.play{
+        width:40px;
+        height:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+</div>
+
+<nav>
+    <div class="logo">Raja <span>♥</span> Shivani</div>
+    <div class="nav-right">Our Little Universe</div>
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            A song for two hearts
+        </div>
+
+        <h1>
+            <span class="raja">Raja</span>
+            <span class="shivani">Shivani</span>
+        </h1>
+
+        <p class="hero-sub">
+            Some stories are written in words.
+            Ours is written in songs, little moments,
+            late-night conversations and memories
+            we never want to forget.
+        </p>
+
+        <div class="scroll">
+            ↓ &nbsp; scroll into our memories
+        </div>
+
+    </div>
+
+    <div class="heart">♥</div>
+
+</section>
+
+<section class="memory-section">
+
+    <div class="section-label">01 — The memories</div>
+
+    <h2 class="section-title">
+        Things worth remembering.
+    </h2>
+
+    <div class="memory-grid">
+
+        <div class="memory">
+            <div class="memory-number">MEMORY 01</div>
+            <h3>Our Song</h3>
+            <p>
+                Every relationship eventually gets that one song
+                that somehow sounds different after you meet.
+            </p>
+        </div>
+
+        <div class="memory">
+            <div class="memory-number">MEMORY 02</div>
+            <h3>Just Us</h3>
+            <p>
+                Two people, countless conversations,
+                random laughs and moments that nobody else understands.
+            </p>
+        </div>
+
+        <div class="memory">
+            <div class="memory-number">MEMORY 03</div>
+            <h3>Forever</h3>
+            <p>
+                Not because everything will always be perfect,
+                but because we choose each other again and again.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="quote-section">
+
+    <div>
+
+        <div class="quote">
+            “Somewhere between the music
+            and the memories,
+            <span>I found you.</span>”
+        </div>
+
+        <div class="quote-author">
+            RAJA × SHIVANI
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    MADE WITH LOVE • RAJA ♥ SHIVANI
+</footer>
+
+<!-- YOUTUBE PLAYER -->
+<div id="youtube-player"></div>
+
+<!-- MUSIC PLAYER -->
+<div class="player">
+
+    <div class="player-main">
+
+        <div class="album" id="album">
+            ♥
+        </div>
+
+        <div>
+            <div class="song-title" id="songTitle">
+                Raja ♥ Shivani — Our Playlist
+            </div>
+
+            <div class="song-status" id="songStatus">
+                Ready to play
+            </div>
+        </div>
+
+        <div class="controls">
+
+            <button class="btn" id="previous">
+                ◀◀
+            </button>
+
+            <button class="btn play" id="play">
+                ▶
+            </button>
+
+            <button class="btn" id="next">
+                ▶▶
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="progress-wrap">
+
+        <span class="time" id="current">0:00</span>
+
+        <div class="progress" id="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <span class="time" id="duration">0:00</span>
+
+    </div>
+
+</div>
+
+<script>
+
+/* ============================================
+   YOUTUBE PLAYLIST
+============================================ */
+
+const PLAYLIST_ID = "PLEw8-3-6R5VA";
+
+let player = null;
+let ready = false;
+let timer = null;
+
+const playButton = document.getElementById("play");
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+
+const songTitle = document.getElementById("songTitle");
+const songStatus = document.getElementById("songStatus");
+
+const progress = document.getElementById("progress");
+const progressBar = document.getElementById("progressBar");
+
+const currentTime = document.getElementById("current");
+const durationTime = document.getElementById("duration");
+
+const album = document.getElementById("album");
+
+
+/* Load YouTube API */
+
+const youtubeScript = document.createElement("script");
+
+youtubeScript.src = "https://www.youtube.com/iframe_api";
+
+document.head.appendChild(youtubeScript);
+
+
+/* YouTube API callback */
+
+window.onYouTubeIframeAPIReady = function(){
+
+    player = new YT.Player("youtube-player",{
+
+        width:"1",
+        height:"1",
+
+        playerVars:{
+            autoplay:0,
+            controls:0,
+            playsinline:1,
+            rel:0,
+            modestbranding:1,
+            listType:"playlist",
+            list:PLAYLIST_ID
+        },
+
+        events:{
+            onReady:onReady,
+            onStateChange:onStateChange,
+            onError:onError
+        }
+
+    });
+
+};
+
+
+/* READY */
+
+function onReady(){
+
+    ready = true;
+
+    songStatus.textContent = "READY • PRESS PLAY";
+
+    updateSong();
+
+    startTimer();
+
+}
+
+
+/* STATE */
+
+function onStateChange(event){
+
+    if(event.data === YT.PlayerState.PLAYING){
+
+        playButton.textContent = "Ⅱ";
+
+        songStatus.textContent = "NOW PLAYING";
+
+        album.classList.add("playing");
+
+        updateSong();
+
+    }
+
+    else if(event.data === YT.PlayerState.PAUSED){
+
+        playButton.textContent = "▶";
+
+        songStatus.textContent = "PAUSED";
+
+        album.classList.remove("playing");
+
+    }
+
+    else if(event.data === YT.PlayerState.ENDED){
+
+        playButton.textContent = "▶";
+
+        songStatus.textContent = "ENDED";
+
+        album.classList.remove("playing");
+
+    }
+
+    else if(event.data === YT.PlayerState.BUFFERING){
+
+        songStatus.textContent = "LOADING...";
+
+    }
+
+}
+
+
+/* ERROR */
+
+function onError(){
+
+    songStatus.textContent = "PLAYBACK ERROR";
+
+}
+
+
+/* PLAY / PAUSE */
+
+playButton.addEventListener("click",function(){
+
+    if(!ready) return;
+
+    const state = player.getPlayerState();
+
+    if(state === YT.PlayerState.PLAYING){
+
+        player.pauseVideo();
+
+    }else{
+
+        player.playVideo();
+
+    }
+
+});
+
+
+/* PREVIOUS */
+
+previousButton.addEventListener("click",function(){
+
+    if(!ready) return;
+
+    player.previousVideo();
+
+});
+
+
+/* NEXT */
+
+nextButton.addEventListener("click",function(){
+
+    if(!ready) return;
+
+    player.nextVideo();
+
+});
+
+
+/* SONG TITLE */
+
+function updateSong(){
+
+    if(!ready) return;
+
+    try{
+
+        const data = player.getVideoData();
+
+        if(data && data.title){
+
+            songTitle.textContent = data.title;
+
+        }
+
+    }catch(e){}
+
+}
+
+
+/* PROGRESS */
+
+function startTimer(){
+
+    clearInterval(timer);
+
+    timer = setInterval(function(){
+
+        if(!ready) return;
+
+        try{
+
+            const duration = player.getDuration();
+
+            const current = player.getCurrentTime();
+
+            if(duration > 0){
+
+                const percent =
+                    (current / duration) * 100;
+
+                progressBar.style.width =
+                    percent + "%";
+
+                currentTime.textContent =
+                    formatTime(current);
+
+                durationTime.textContent =
+                    formatTime(duration);
+
+            }
+
+            updateSong();
+
+        }catch(e){}
+
+    },500);
+
+}
+
+
+/* SEEK */
+
+progress.addEventListener("click",function(event){
+
+    if(!ready) return;
+
+    const rect =
+        progress.getBoundingClientRect();
+
+    const percent =
+        (event.clientX - rect.left) / rect.width;
+
+    const duration =
+        player.getDuration();
+
+    if(duration){
+
+        player.seekTo(
+            duration * percent,
+            true
+        );
+
+    }
+
+});
+
+
+/* TIME FORMAT */
+
+function formatTime(seconds){
+
+    if(!seconds || isNaN(seconds))
+        return "0:00";
+
+    seconds = Math.floor(seconds);
+
+    const minutes =
+        Math.floor(seconds / 60);
+
+    const secs =
+        String(seconds % 60).padStart(2,"0");
+
+    return minutes + ":" + secs;
+
+}
+
+
+/* SPACEBAR */
+
+document.addEventListener("keydown",function(event){
+
+    if(event.code === "Space"){
+
+        event.preventDefault();
+
+        playButton.click();
+
+    }
+
+    if(event.key.toLowerCase() === "n"){
+
+        nextButton.click();
+
+    }
+
+    if(event.key.toLowerCase() === "p"){
+
+        previousButton.click();
+
+    }
+
+});
+
+
+/* HEART CLICK */
+
+document.querySelector(".heart").addEventListener("click",function(){
+
+    this.animate(
+        [
+            {transform:"scale(1)"},
+            {transform:"scale(1.5)"},
+            {transform:"scale(1)"}
+        ],
+        {
+            duration:500
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>
+```
       position: relative;
     }
 
