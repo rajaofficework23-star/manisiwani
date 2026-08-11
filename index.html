@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vibe Songh — 90's Kids</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&display=swap');
+
+    :root {
+      --cream: #f4e8c1;
+      --paper: #ead9a8;
+      --brown: #3a2418;
+      --red: #9e3028;
+      --orange: #d47a32;
+      --green: #526344;
+      --dark: #171411;
+      --glass: rgba(31, 25, 19, 0.76);
+      --border: rgba(244, 232, 193, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(212, 122, 50, .17), transparent 25%),
+        radial-gradient(circle at 85% 20%, rgba(158, 48, 40, .16), transparent 25%),
+        linear-gradient(135deg, #18130f, #2b2118 48%, #14110e);
+      font-family: Inter, sans-serif;
+    }
+
+    /* Grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 100;
+      opacity: .075;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+      mix-blend-mode: screen;
+    }
+
+    /* Background glow */
+    .ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .orb {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .12;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+
+    .orb.one {
+      background: var(--orange);
+      top: -180px;
+      left: -120px;
+    }
+
+    .orb.two {
+      background: var(--red);
+      right: -180px;
+      bottom: 5%;
+      animation-delay: -5s;
+    }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(70px, 40px) scale(1.15); }
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* Header */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 0 180px;
+      position: relative;
+    }
+
+    .hero {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,.045);
+      color: #d7c695;
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #87a85d;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #87a85d;
+      animation: blink 1.6s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: .3; }
+    }
+
+    h1 {
+      font-size: clamp(4rem, 10vw, 8.5rem);
+      line-height: .8;
+      letter-spacing: -7px;
+      font-weight: 800;
+      color: var(--cream);
+      text-shadow:
+        5px 5px 0 #70462c,
+        9px 9px 0 rgba(0,0,0,.28);
+    }
+
+    h1 span {
+      display: block;
+      color: var(--orange);
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -5px;
+      transform: rotate(-2deg);
+      margin-left: 25px;
+    }
+
+    .subtitle {
+      max-width: 570px;
+      margin-top: 32px;
+      color: #c7b991;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border: 1px solid rgba(244,232,193,.16);
+      background: rgba(255,255,255,.035);
+      color: #a99b77;
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      border-radius: 5px;
+    }
+
+    /* Cassette */
+    .cassette-stage {
+      position: relative;
+      height: 540px;
+      display: grid;
+      place-items: center;
+      perspective: 1000px;
+    }
+
+    .cassette {
+      width: min(430px, 80vw);
+      aspect-ratio: 1.52;
+      position: relative;
+      border-radius: 18px;
+      transform: rotate(5deg) rotateX(8deg);
+      background:
+        linear-gradient(135deg, #bb7a43, #7e4a2e 45%, #482d21);
+      border: 3px solid #d09559;
+      box-shadow:
+        0 45px 70px rgba(0,0,0,.5),
+        inset 0 0 0 5px rgba(48,26,17,.55),
+        inset 0 0 40px rgba(255,190,100,.08);
+      animation: cassetteFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes cassetteFloat {
+      0%,100% { transform: rotate(5deg) rotateX(8deg) translateY(0); }
+      50% { transform: rotate(3deg) rotateX(8deg) translateY(-13px); }
+    }
+
+    .cassette::before {
+      content: "VIBE SONGH";
+      position: absolute;
+      left: 7%;
+      top: 9%;
+      width: 86%;
+      height: 31%;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      color: #3b2418;
+      background: #e7d397;
+      font-family: "Press Start 2P", monospace;
+      font-size: clamp(9px, 1.5vw, 13px);
+      box-shadow: inset 0 0 0 2px rgba(52,31,20,.2);
+    }
+
+    .cassette::after {
+      content: "90'S KIDS • SIDE A";
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      color: rgba(60,35,23,.65);
+      font-family: "DM Mono", monospace;
+      font-size: 7px;
+    }
+
+    .window {
+      position: absolute;
+      left: 17%;
+      right: 17%;
+      bottom: 18%;
+      height: 26%;
+      border-radius: 60px;
+      background: #211915;
+      border: 5px solid #613b28;
+      box-shadow: inset 0 0 20px #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      overflow: hidden;
+    }
+
+    .reel {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, #1a1512 0 13%, #b47a48 14% 19%, #2b201b 20% 31%, #9c6840 32% 38%, #201713 39% 100%);
+      border: 4px solid #a56c40;
+      box-shadow: inset 0 0 12px #000;
+    }
+
+    .reel::after {
+      content: "";
+      display: block;
+      width: 15px;
+      height: 15px;
+      margin: 25px auto;
+      border-radius: 50%;
+      background: #191310;
+    }
+
+    .cassette-label {
+      position: absolute;
+      left: 10%;
+      bottom: 7%;
+      color: #d6b979;
+      font-family: "DM Mono", monospace;
+      font-size: 8px;
+      letter-spacing: 2px;
+    }
+
+    .sticker {
+      position: absolute;
+      background: var(--cream);
+      color: #6d3925;
+      padding: 9px 12px;
+      font-family: "DM Mono", monospace;
+      font-size: 9px;
+      box-shadow: 4px 5px 0 rgba(0,0,0,.25);
+    }
+
+    .sticker.one {
+      top: 12%;
+      right: -2%;
+      transform: rotate(8deg);
+    }
+
+    .sticker.two {
+      bottom: 8%;
+      left: -4%;
+      transform: rotate(-7deg);
+    }
+
+    /* Memories */
+    .memories {
+      padding: 50px 0 300px;
+    }
+
+    .section-label {
+      font-family: "DM Mono", monospace;
+      color: #917e5d;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .memory {
+      min-height: 145px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.035);
+      backdrop-filter: blur(12px);
+      border-radius: 10px;
+      transition: .3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .memory:hover {
+      transform: translateY(-6px) rotate(-1deg);
+      background: rgba(255,255,255,.065);
+      border-color: rgba(244,232,193,.3);
+    }
+
+    .memory-number {
+      color: #765f45;
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+    }
+
+    .memory h3 {
+      margin-top: 25px;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #dfce9f;
+    }
+
+    .memory p {
+      margin-top: 7px;
+      color: #8f8267;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* Quote */
+    .quote-wrap {
+      margin: 70px 0;
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quote {
+      font-family: Georgia, serif;
+      font-size: clamp(25px, 4vw, 45px);
+      color: #ddcc9b;
+      transition: opacity .4s, transform .4s;
+    }
+
+    .quote.fade {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    .quote-source {
+      margin-top: 15px;
+      color: #77684e;
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px 0 200px;
+      color: #5d513e;
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* Player */
+    .player {
+      position: fixed;
+      z-index: 90;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(900px, calc(100% - 24px));
+      padding: 15px 18px;
+      border: 1px solid rgba(244,232,193,.18);
+      border-radius: 18px;
+      background: rgba(22,17,13,.83);
+      backdrop-filter: blur(25px) saturate(120%);
+      box-shadow: 0 20px 60px rgba(0,0,0,.5);
+    }
+
+    .player-top {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mini-cassette {
+      width: 45px;
+      height: 32px;
+      border-radius: 5px;
+      background: #a8683e;
+      position: relative;
+      box-shadow: inset 0 0 0 2px #cf9159;
+    }
+
+    .mini-cassette::before,
+    .mini-cassette::after {
+      content: "";
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      top: 10px;
+      border-radius: 50%;
+      background: #261a15;
+      border: 2px solid #d09a64;
+    }
+
+    .mini-cassette::before { left: 7px; }
+    .mini-cassette::after { right: 7px; }
+
+    .track-info {
+      min-width: 0;
+    }
+
+    .track-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #ead9aa;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .track-status {
+      margin-top: 4px;
+      font-family: "DM Mono", monospace;
+      font-size: 9px;
+      color: #796a50;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .control {
+      width: 37px;
+      height: 37px;
+      border-radius: 50%;
+      border: 1px solid rgba(244,232,193,.15);
+      color: #dbc998;
+      background: rgba(255,255,255,.045);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: .2s ease;
+      font-size: 13px;
+    }
+
+    .control:hover {
+      transform: scale(1.08);
+      background: rgba(255,255,255,.1);
+    }
+
+    .control.play {
+      width: 43px;
+      height: 43px;
+      color: #2b1b13;
+      background: #d8bd7c;
+      border: none;
+      font-size: 15px;
+    }
+
+    .progress-area {
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .time {
+      width: 32px;
+      color: #695b47;
+      font-family: "DM Mono", monospace;
+      font-size: 8px;
+    }
+
+    .progress {
+      height: 3px;
+      flex: 1;
+      background: #3a3026;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .progress-bar {
+      width: 0%;
+      height: 100%;
+      background: #d2b875;
+      transition: width .2s linear;
+    }
+
+    #youtube-player {
+      position: fixed;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+      bottom: 0;
+      right: 0;
+    }
+
+    .key-hint {
+      position: fixed;
+      z-index: 10;
+      right: 20px;
+      top: 20px;
+      color: #655843;
+      font-family: "DM Mono", monospace;
+      font-size: 9px;
+      opacity: .7;
+    }
+
+    .vinyl-note {
+      position: fixed;
+      z-index: 5;
+      font-size: 30px;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-top: 80px;
+      }
+
+      .cassette-stage {
+        height: 400px;
+      }
+
+      .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        font-size: clamp(4rem, 17vw, 7rem);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .memory-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .memory {
+        min-height: 125px;
+      }
+
+      .memory h3 {
+        font-size: 16px;
+      }
+
+      .player {
+        bottom: 8px;
+        padding: 12px;
+      }
+
+      .player-top {
+        gap: 9px;
+      }
+
+      .mini-cassette {
+        display: none;
+      }
+
+      .controls .control:not(.play) {
+        width: 32px;
+        height: 32px;
+      }
+
+      .control.play {
+        width: 39px;
+        height: 39px;
+      }
+
+      .key-hint {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ambient">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+  </div>
+
+  <div class="key-hint">PRESS SPACE • REWIND THE FEELS</div>
+
+  <main>
+    <header>
+      <div class="container hero">
+
+        <div>
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            SIDE A • MEMORY LOADED
+          </div>
+
+          <h1>
+            VIBE
+            <span>SONGH</span>
+          </h1>
+
+          <p class="subtitle">
+            For the kids who grew up when a song wasn't just a song.
+            It was a cassette rewound with a pencil, a late-night radio,
+            a school crush, a rainy-window bus ride and a whole damn memory.
+          </p>
+
+          <div class="hero-meta">
+            <span class="tag">1990 — 1999</span>
+            <span class="tag">KUMAR SANU ERA</span>
+            <span class="tag">FULL VOLUME</span>
+            <span class="tag">NO SKIP</span>
+          </div>
+        </div>
+
+        <div class="cassette-stage">
+          <div class="sticker one">PLAY IT LOUD!</div>
+
+          <div class="cassette">
+            <div class="window">
+              <div class="reel"></div>
+              <div class="reel"></div>
+            </div>
+
+            <div class="cassette-label">
+              REC • 90's MIX • ORIGINAL
+            </div>
+          </div>
+
+          <div class="sticker two">₹20 CASSETTE<br>SHOP SPECIAL</div>
+        </div>
+
+      </div>
+    </header>
+
+    <section class="memories">
+      <div class="container">
+
+        <div class="section-label">/// Things we somehow remember perfectly</div>
+
+        <div class="memory-grid">
+          <div class="memory">
+            <div class="memory-number">01 / SOUND</div>
+            <h3>Radio wali feeling</h3>
+            <p>Waiting for your favourite song and praying nobody talks over it.</p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-number">02 / OBJECT</div>
+            <h3>Pencil rewind</h3>
+            <p>Because batteries were expensive and the cassette deserved another chance.</p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-number">03 / ROMANCE</div>
+            <h3>Dear diary...</h3>
+            <p>One song. One name. Suddenly every lyric made perfect sense.</p>
+          </div>
+
+          <div class="memory">
+            <div class="memory-number">04 / VIBE</div>
+            <h3>Sunday afternoon</h3>
+            <p>Doordarshan on TV, chai in the kitchen, and nowhere you needed to be.</p>
+          </div>
+        </div>
+
+        <div class="quote-wrap">
+          <div class="quote" id="quote">
+            “Some songs don't play. They remember for you.”
+          </div>
+          <div class="quote-source" id="quoteSource">
+            — 90'S KIDS MEMORY DEPARTMENT
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      MADE FOR THE GENERATION THAT KNEW THE SOUND OF A CASSETTE CLICKING INTO PLACE.
+      <br><br>
+      SIDE A • SIDE B • SAME MEMORIES
+    </footer>
+  </main>
+
+  <!-- Invisible YouTube player -->
+  <div id="youtube-player"></div>
+
+  <!-- Music Player -->
+  <div class="player">
+    <div class="player-top">
+
+      <div class="mini-cassette"></div>
+
+      <div class="track-info">
+        <div class="track-name" id="trackName">Vibe Songh — Loading...</div>
+        <div class="track-status" id="trackStatus">INSERTING CASSETTE...</div>
+      </div>
+
+      <div class="controls">
+        <button class="control" id="prevBtn" aria-label="Previous">◀◀</button>
+        <button class="control play" id="playBtn" aria-label="Play">▶</button>
+        <button class="control" id="nextBtn" aria-label="Next">▶▶</button>
+      </div>
+
+    </div>
+
+    <div class="progress-area">
+      <span class="time" id="currentTime">0:00</span>
+
+      <div class="progress" id="progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <span class="time" id="duration">0:00</span>
+    </div>
+  </div>
+
+  <script>
+    /*
+      ============================================================
+      VIBE SONGH — 90's KIDS
+      YouTube playlist:
+      PLEw8-3-6R5VA
+      ============================================================
+    */
+
+    const PLAYLIST_ID = "PLEw8-3-6R5VA";
+
+    let player;
+    let isReady = false;
+    let progressTimer;
+
+    const playBtn = document.getElementById("playBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const trackName = document.getElementById("trackName");
+    const trackStatus = document.getElementById("trackStatus");
+    const progressBar = document.getElementById("progressBar");
+    const progress = document.getElementById("progress");
+    const currentTimeEl = document.getElementById("currentTime");
+    const durationEl = document.getElementById("duration");
+
+    /*
+      Load YouTube IFrame API
+    */
+    const tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+
+    window.onYouTubeIframeAPIReady = function () {
+      player = new YT.Player("youtube-player", {
+        height: "1",
+        width: "1",
+        playerVars: {
+          listType: "playlist",
+          list: PLAYLIST_ID,
+          autoplay: 0,
+          controls: 0,
+          playsinline: 1,
+          rel: 0,
+          modestbranding: 1
+        },
+        events: {
+          onReady: onPlayerReady,
+          onStateChange: onPlayerStateChange,
+          onError: onPlayerError
+        }
+      });
+    };
+
+    function onPlayerReady() {
+      isReady = true;
+
+      trackStatus.textContent = "READY • PRESS PLAY";
+
+      setTimeout(() => {
+        updateTrackInfo();
+      }, 500);
+
+      startProgressLoop();
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING) {
+        playBtn.textContent = "Ⅱ";
+        trackStatus.textContent = "NOW PLAYING • SIDE A";
+        updateTrackInfo();
+      }
+
+      if (event.data === YT.PlayerState.PAUSED) {
+        playBtn.textContent = "▶";
+        trackStatus.textContent = "PAUSED • TAPE WAITING";
+      }
+
+      if (event.data === YT.PlayerState.ENDED) {
+        playBtn.textContent = "▶";
+        trackStatus.textContent = "TRACK ENDED • NEXT MEMORY";
+        updateTrackInfo();
+      }
+
+      if (event.data === YT.PlayerState.BUFFERING) {
+        
