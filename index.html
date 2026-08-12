@@ -2,1096 +2,932 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Manish ♥ Shivani</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+:root{
+  --gold:#e2b96f;
+  --pink:#eaa0ad;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    min-height:100vh;
-    background:#12090d;
-    color:white;
-    font-family:'DM Sans',sans-serif;
-    overflow-x:hidden;
+  min-height:100vh;
+  background:#120b0e;
+  color:#fff;
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
 }
 
-/* ================= BACKGROUND ================= */
+/* =========================
+   BACKGROUND
+========================= */
 
 .background{
-    position:fixed;
-    inset:0;
-    z-index:-10;
+  position:fixed;
+  inset:0;
+  z-index:-10;
+  overflow:hidden;
 
-    background:
-        linear-gradient(
-            rgba(20,8,12,.40),
-            rgba(20,8,12,.72)
-        ),
-        url("portrait.png");
+  background-image:
+    linear-gradient(
+      rgba(15,7,10,.38),
+      rgba(15,7,10,.68)
+    ),
+    url("portrait.png");
 
-    background-size:cover;
-    background-position:center top;
+  background-size:cover;
+  background-position:center top;
 }
 
-@media(min-width:800px){
-    .background{
-        background:
-            linear-gradient(
-                rgba(20,8,12,.38),
-                rgba(20,8,12,.72)
-            ),
-            url("landscape.png");
+/* PC / LANDSCAPE */
+@media (min-width:800px){
+  .background{
+    background-image:
+      linear-gradient(
+        rgba(15,7,10,.35),
+        rgba(15,7,10,.62)
+      ),
+      url("landscape.png");
 
-        background-size:cover;
-        background-position:center;
-    }
+    background-position:center;
+  }
 }
 
 .background:after{
-    content:"";
-    position:absolute;
-    inset:0;
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
 
-    background:
-        radial-gradient(
-            circle at center,
-            transparent 0,
-            rgba(0,0,0,.40) 100%
-        );
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      transparent 10%,
+      rgba(0,0,0,.22) 100%
+    );
 }
 
-/* ================= NAV ================= */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
 
-    padding:25px 6%;
+  padding:25px 6%;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-    z-index:10;
+  z-index:10;
 }
 
 .logo{
-    font:
-        600 31px
-        'Cormorant Garamond',serif;
-
-    text-shadow:
-        0 2px 20px rgba(0,0,0,.7);
+  font:600 30px 'Cormorant Garamond',serif;
+  letter-spacing:1px;
+  text-shadow:0 2px 15px #000;
 }
 
 .logo span{
-    color:#e4b96d;
+  color:var(--gold);
 }
 
 .nav-right{
-    font-size:9px;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    opacity:.7;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  opacity:.7;
 }
 
-/* ================= HERO ================= */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-    min-height:100vh;
+  min-height:100vh;
 
-    padding:
-        120px 7%
-        220px;
+  padding:120px 7% 180px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    text-align:center;
+  text-align:center;
 }
 
 .hero-content{
-    width:100%;
-    max-width:1000px;
+  max-width:1000px;
 }
 
 .small-title{
-    color:#e4b96d;
-
-    font-size:10px;
-    letter-spacing:5px;
-
-    text-transform:uppercase;
-
-    margin-bottom:30px;
+  font-size:10px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:28px;
 }
 
 h1{
-    font:
-        500
-        clamp(75px,13vw,175px)
-        /.7
-        'Cormorant Garamond',serif;
+  font:
+    500 clamp(75px,13vw,175px)/.7
+    'Cormorant Garamond',
+    serif;
 
-    letter-spacing:-8px;
+  letter-spacing:-8px;
 
-    text-shadow:
-        0 5px 35px rgba(0,0,0,.6);
+  text-shadow:
+    0 5px 30px rgba(0,0,0,.45);
 }
 
-.manish{
-    display:block;
+h1 .manish{
+  display:block;
 }
 
-.shivani{
-    display:block;
+h1 .shivani{
+  display:block;
 
-    margin-left:70px;
+  color:transparent;
 
-    color:transparent;
+  -webkit-text-stroke:
+    1px rgba(255,248,239,.9);
 
-    -webkit-text-stroke:
-        1px rgba(255,248,239,.95);
-
-    font-style:italic;
+  font-style:italic;
+  margin-left:70px;
 }
 
 .hero-sub{
-    max-width:650px;
+  max-width:650px;
 
-    margin:
-        55px auto 0;
+  margin:50px auto 0;
 
-    color:
-        rgba(255,255,255,.82);
+  color:rgba(255,255,255,.78);
 
-    font-size:15px;
-    line-height:1.9;
+  font-size:15px;
+  line-height:1.9;
+
+  text-shadow:0 2px 15px #000;
 }
 
 .scroll{
-    margin-top:50px;
+  margin-top:50px;
 
-    font-size:9px;
-    letter-spacing:4px;
+  font-size:9px;
+  letter-spacing:4px;
 
-    text-transform:uppercase;
+  text-transform:uppercase;
 
-    opacity:.7;
+  opacity:.65;
 }
 
-/* ================= MEMORIES ================= */
+.floating-heart{
+  position:absolute;
+
+  right:12%;
+  top:28%;
+
+  color:#e49ca8;
+  font-size:23px;
+
+  animation:
+    float 4s ease-in-out infinite;
+
+  cursor:pointer;
+}
+
+@keyframes float{
+  50%{
+    transform:
+      translateY(-18px)
+      rotate(8deg);
+
+    opacity:.6;
+  }
+}
+
+/* =========================
+   MEMORY SECTION
+========================= */
 
 .memory-section{
-    padding:
-        120px 7%
-        280px;
+  padding:120px 7% 240px;
 }
 
 .section-label{
-    text-align:center;
+  text-align:center;
 
-    color:#e4b96d;
+  color:var(--gold);
 
-    font-size:9px;
-    letter-spacing:4px;
+  font-size:9px;
+  letter-spacing:4px;
 
-    text-transform:uppercase;
+  text-transform:uppercase;
+
+  margin-bottom:22px;
 }
 
 .section-title{
-    text-align:center;
+  text-align:center;
 
-    margin-top:20px;
-
-    font:
-        500
-        clamp(45px,7vw,85px)
-        'Cormorant Garamond',serif;
+  font:
+    500 clamp(45px,7vw,85px)
+    'Cormorant Garamond',
+    serif;
 }
 
 .memory-grid{
-    max-width:1100px;
+  max-width:1100px;
 
-    margin:70px auto 0;
+  margin:70px auto 0;
 
-    display:grid;
+  display:grid;
 
-    grid-template-columns:
-        repeat(3,1fr);
+  grid-template-columns:
+    repeat(3,1fr);
 
-    gap:18px;
+  gap:18px;
 }
 
 .memory{
-    min-height:230px;
+  min-height:230px;
 
-    padding:32px;
+  padding:32px;
 
-    background:
-        rgba(20,10,13,.45);
+  border:
+    1px solid
+    rgba(255,255,255,.14);
 
-    border:
-        1px solid
-        rgba(255,255,255,.14);
+  background:
+    rgba(20,10,13,.42);
 
-    border-radius:20px;
+  backdrop-filter:blur(16px);
 
-    backdrop-filter:blur(15px);
+  border-radius:20px;
 
-    transition:.35s;
+  transition:.4s;
 }
 
 .memory:hover{
-    transform:translateY(-8px);
+  transform:translateY(-9px);
 
-    border-color:
-        rgba(228,185,109,.45);
+  background:
+    rgba(20,10,13,.58);
+
+  border-color:
+    rgba(226,185,111,.4);
 }
 
 .memory-number{
-    color:#e4b96d;
-
-    font-size:9px;
-    letter-spacing:2px;
+  font-size:9px;
+  color:var(--gold);
+  letter-spacing:2px;
 }
 
 .memory h3{
-    margin-top:45px;
+  margin-top:45px;
 
-    font:
-        500 30px
-        'Cormorant Garamond',serif;
+  font:
+    500 30px
+    'Cormorant Garamond',
+    serif;
 }
 
 .memory p{
-    margin-top:12px;
+  margin-top:12px;
 
-    color:
-        rgba(255,255,255,.65);
+  color:
+    rgba(255,255,255,.65);
 
-    font-size:13px;
-    line-height:1.7;
+  font-size:13px;
+  line-height:1.7;
 }
 
-/* ================= QUOTE ================= */
+/* =========================
+   QUOTE
+========================= */
 
 .quote-section{
-    min-height:55vh;
+  min-height:55vh;
 
-    padding:
-        100px 20px
-        300px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    display:flex;
+  padding:
+    100px
+    20px
+    270px;
 
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
+  text-align:center;
 }
 
 .quote{
-    max-width:850px;
+  max-width:850px;
 
-    font:
-        500
-        clamp(35px,6vw,70px)/1.05
-        'Cormorant Garamond',serif;
+  font:
+    500 clamp(35px,6vw,70px)/1.05
+    'Cormorant Garamond',
+    serif;
+
+  text-shadow:
+    0 3px 20px #000;
 }
 
 .quote span{
-    color:#eaa0ad;
-    font-style:italic;
+  color:var(--pink);
+  font-style:italic;
 }
 
 .quote-author{
-    margin-top:25px;
+  margin-top:25px;
 
-    color:#e4b96d;
+  color:var(--gold);
 
-    font-size:9px;
-    letter-spacing:3px;
+  font-size:9px;
+  letter-spacing:3px;
 }
 
 footer{
-    padding:
-        60px 20px
-        190px;
+  padding:
+    60px
+    20px
+    180px;
 
-    text-align:center;
+  text-align:center;
 
-    color:
-        rgba(255,255,255,.5);
+  color:
+    rgba(255,255,255,.55);
 
-    font-size:9px;
-    letter-spacing:2px;
+  font-size:9px;
+  letter-spacing:2px;
 }
 
-/* =================================================
+/* =====================================================
    FLOATING YOUTUBE VIDEO
-================================================= */
-
-.video-window{
-
-    position:fixed;
-
-    z-index:80;
-
-    top:90px;
-    right:22px;
-
-    width:300px;
-    height:169px;
-
-    min-width:190px;
-    min-height:110px;
-
-    max-width:70vw;
-    max-height:55vh;
-
-    background:#080808;
-
-    border:
-        1px solid
-        rgba(255,255,255,.25);
-
-    border-radius:14px;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 20px 60px
-        rgba(0,0,0,.65);
-
-    resize:both;
-}
-
-/* top bar lets you drag */
-
-.video-bar{
-
-    position:absolute;
-
-    z-index:20;
-
-    top:0;
-    left:0;
-    right:0;
-
-    height:30px;
-
-    display:flex;
-
-    justify-content:space-between;
-    align-items:center;
-
-    padding:
-        0 10px;
-
-    background:
-        rgba(10,10,10,.75);
-
-    backdrop-filter:blur(8px);
-
-    cursor:grab;
-
-    user-select:none;
-}
-
-.video-bar:active{
-    cursor:grabbing;
-}
-
-.video-title{
-
-    font-size:8px;
-
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-
-    opacity:.7;
-}
-
-.video-close{
-
-    border:0;
-
-    background:transparent;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-    opacity:.7;
-}
-
-.video-close:hover{
-    opacity:1;
-}
+===================================================== */
 
 #youtube-player{
+  position:fixed;
 
-    position:absolute;
+  z-index:90;
 
-    top:30px;
-    left:0;
+  top:105px;
+  right:22px;
 
-    width:100%;
+  width:min(420px,78vw);
 
-    height:
-        calc(100% - 30px);
+  aspect-ratio:16/10;
 
-    border:0;
+  height:auto;
+
+  border:
+    1px solid
+    rgba(255,255,255,.18);
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  background:#000;
+
+  box-shadow:
+    0 20px 70px
+    rgba(0,0,0,.65);
+
+  touch-action:none;
+
+  transition:
+    box-shadow .2s ease,
+    opacity .2s ease;
 }
 
-/* resize hint */
+#youtube-player.dragging{
+  box-shadow:
+    0 30px 90px
+    rgba(0,0,0,.8);
 
-.resize-hint{
-
-    position:absolute;
-
-    z-index:25;
-
-    right:4px;
-    bottom:3px;
-
-    font-size:10px;
-
-    opacity:.45;
-
-    pointer-events:none;
+  opacity:.96;
 }
 
-/* =================================================
-   CASSETTE
-================================================= */
-
-.cassette{
-
-    position:fixed;
-
-    z-index:50;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%)
-        rotate(-2deg);
-
-    width:min(600px,75vw);
-
-    aspect-ratio:1.55;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #3b373c,
-            #161317 55%,
-            #080708
-        );
-
-    border:
-        2px solid
-        rgba(255,255,255,.20);
-
-    box-shadow:
-        0 30px 90px
-        rgba(0,0,0,.8),
-
-        inset 0 1px 0
-        rgba(255,255,255,.15);
-
-    overflow:hidden;
-
-    pointer-events:none;
+#youtube-player iframe{
+  width:100%!important;
+  height:100%!important;
+  border:0;
 }
 
-.cassette:before{
+/* DRAG BAR */
 
-    content:"";
+.youtube-dragbar{
+  position:fixed;
 
-    position:absolute;
+  z-index:91;
 
-    left:4%;
-    right:4%;
-    top:8%;
+  top:105px;
+  right:22px;
 
-    height:7px;
+  width:min(420px,78vw);
 
-    border-radius:20px;
+  height:38px;
 
-    background:
-        rgba(255,255,255,.1);
+  border-radius:
+    20px
+    20px
+    0
+    0;
+
+  background:
+    rgba(7,6,7,.9);
+
+  color:
+    rgba(255,255,255,.75);
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  padding:
+    0
+    12px
+    0
+    15px;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  cursor:grab;
+
+  user-select:none;
+  -webkit-user-select:none;
+
+  touch-action:none;
+
+  backdrop-filter:blur(10px);
 }
 
-.cassette-label{
-
-    position:absolute;
-
-    left:18%;
-    right:18%;
-
-    top:15%;
-    bottom:18%;
-
-    border-radius:10px;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ead4a4,
-            #b98c58
-        );
-
-    border:
-        1px solid
-        rgba(0,0,0,.5);
+.youtube-dragbar:active{
+  cursor:grabbing;
 }
 
-.cassette-label img{
+.youtube-dragbar button{
+  border:0;
 
-    width:100%;
-    height:100%;
+  background:transparent;
 
-    object-fit:cover;
+  color:#fff;
 
-    opacity:.9;
+  font-size:21px;
+
+  line-height:1;
+
+  width:30px;
+  height:30px;
+
+  border-radius:50%;
+
+  cursor:pointer;
 }
 
-.cassette-label:after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,.08),
-            rgba(0,0,0,.25)
-        );
+.youtube-dragbar button:hover{
+  background:
+    rgba(255,255,255,.12);
 }
 
-.cassette-name{
-
-    position:absolute;
-
-    z-index:5;
-
-    top:8px;
-
-    left:0;
-    right:0;
-
-    text-align:center;
-
-    color:#281d18;
-
-    font-weight:700;
-
-    font-size:11px;
-
-    letter-spacing:2px;
-}
-
-/* reels */
-
-.reel{
-
-    position:absolute;
-
-    z-index:8;
-
-    top:50%;
-
-    width:21%;
-
-    aspect-ratio:1;
-
-    transform:
-        translateY(-50%);
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-
-            #111 0 10%,
-
-            #d0c8b7 11% 16%,
-
-            #2b2929 17% 25%,
-
-            #d4cdbd 26% 30%,
-
-            #242222 31% 44%,
-
-            #0d0d0d 45% 100%
-        );
-
-    border:
-        2px solid
-        rgba(255,255,255,.25);
-
-    box-shadow:
-        inset 0 0 12px
-        rgba(0,0,0,.8);
-}
-
-.reel.left{
-    left:5%;
-}
-
-.reel.right{
-    right:5%;
-}
-
-.reel:before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:25%;
-
-    border-radius:50%;
-
-    background:
-        conic-gradient(
-            #111 0deg 30deg,
-            transparent 30deg 60deg,
-            #111 60deg 90deg,
-            transparent 90deg 120deg,
-            #111 120deg 150deg,
-            transparent 150deg 180deg,
-            #111 180deg 210deg,
-            transparent 210deg 240deg,
-            #111 240deg 270deg,
-            transparent 270deg 300deg,
-            #111 300deg 330deg,
-            transparent 330deg 360deg
-        );
-
-    border:
-        3px solid #aaa;
-}
-
-.video-playing .reel{
-
-    animation:
-        spin 1.8s linear infinite;
-}
-
-@keyframes spin{
-
-    from{
-        transform:
-            translateY(-50%)
-            rotate(0deg);
-    }
-
-    to{
-        transform:
-            translateY(-50%)
-            rotate(360deg);
-    }
-}
-
-/* =================================================
+/* =========================
    MUSIC PLAYER
-================================================= */
+========================= */
 
 .music-player{
+  position:fixed;
 
-    position:fixed;
+  z-index:100;
 
-    z-index:100;
+  bottom:18px;
+  left:50%;
 
-    bottom:18px;
+  transform:translateX(-50%);
 
-    left:50%;
+  width:
+    min(
+      900px,
+      calc(100% - 24px)
+    );
 
-    transform:
-        translateX(-50%);
+  padding:
+    15px
+    18px;
 
-    width:
-        min(900px,
-        calc(100% - 24px));
+  border:
+    1px solid
+    rgba(255,255,255,.18);
 
-    padding:15px 18px;
+  border-radius:20px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.18);
+  background:
+    rgba(15,9,11,.91);
 
-    border-radius:20px;
+  backdrop-filter:blur(24px);
 
-    background:
-        rgba(15,9,11,.93);
+  box-shadow:
+    0 20px 70px
+    rgba(0,0,0,.55);
 
-    backdrop-filter:
-        blur(24px);
-
-    box-shadow:
-        0 20px 70px
-        rgba(0,0,0,.6);
+  overflow:hidden;
 }
 
 .player-main{
+  display:grid;
 
-    display:grid;
+  grid-template-columns:
+    54px
+    minmax(0,1fr)
+    auto;
 
-    grid-template-columns:
-        54px minmax(0,1fr)
-        auto;
+  gap:14px;
 
-    gap:14px;
+  align-items:center;
 
-    align-items:center;
+  min-width:0;
 }
 
+/* THUMBNAIL */
+
 .album{
+  width:54px;
+  height:54px;
 
-    width:54px;
-    height:54px;
+  flex-shrink:0;
 
-    border-radius:14px;
+  border-radius:14px;
 
-    overflow:hidden;
+  overflow:hidden;
 
-    background:
-        linear-gradient(
-            135deg,
-            #e2b96f,
-            #a74d61
-        );
+  background:
+    linear-gradient(
+      135deg,
+      #e2b96f,
+      #a74d61
+    );
+
+  display:grid;
+  place-items:center;
+
+  box-shadow:
+    0 5px 20px
+    rgba(0,0,0,.45);
 }
 
 .album img{
+  width:100%;
+  height:100%;
 
-    width:100%;
-    height:100%;
+  object-fit:cover;
 
-    object-fit:cover;
+  display:block;
+}
+
+.album .fallback{
+  font-size:22px;
 }
 
 .song-title{
+  min-width:0;
 
-    min-width:0;
+  display:-webkit-box;
 
-    display:-webkit-box;
+  -webkit-box-orient:vertical;
 
-    -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
 
-    -webkit-line-clamp:2;
+  overflow:hidden;
 
-    overflow:hidden;
+  text-overflow:ellipsis;
 
-    overflow-wrap:anywhere;
+  overflow-wrap:anywhere;
 
-    font-size:13px;
+  line-height:1.3;
 
-    font-weight:700;
-
-    line-height:1.3;
+  font-size:13px;
+  font-weight:700;
 }
 
 .song-status{
+  margin-top:4px;
 
-    margin-top:4px;
+  color:
+    rgba(255,255,255,.48);
 
-    color:
-        rgba(255,255,255,.48);
+  font-size:8px;
 
-    font-size:8px;
+  letter-spacing:1.5px;
 
-    letter-spacing:1.5px;
+  text-transform:uppercase;
 
-    text-transform:uppercase;
+  white-space:nowrap;
+
+  overflow:hidden;
+
+  text-overflow:ellipsis;
 }
 
+/* CONTROLS */
+
 .controls{
+  display:flex;
 
-    display:flex;
+  align-items:center;
+  justify-content:flex-end;
 
-    align-items:center;
+  gap:6px;
 
-    gap:6px;
+  flex-shrink:0;
+
+  min-width:max-content;
 }
 
 .btn{
+  width:37px;
+  height:37px;
 
-    width:37px;
-    height:37px;
+  flex-shrink:0;
 
-    flex-shrink:0;
+  border-radius:50%;
 
-    border-radius:50%;
+  border:
+    1px solid
+    rgba(255,255,255,.18);
 
-    border:
-        1px solid
-        rgba(255,255,255,.18);
+  background:
+    rgba(255,255,255,.07);
 
-    background:
-        rgba(255,255,255,.07);
+  color:#fff;
 
-    color:white;
+  cursor:pointer;
 
-    cursor:pointer;
+  transition:.2s;
 
-    font-size:10px;
-
-    transition:.2s;
+  font-size:10px;
 }
 
 .btn:hover{
+  transform:scale(1.08);
 
-    transform:scale(1.08);
-
-    background:
-        rgba(255,255,255,.16);
+  background:
+    rgba(255,255,255,.15);
 }
 
 .btn.play{
+  width:46px;
+  height:46px;
 
-    width:46px;
-    height:46px;
+  background:#e2b96f;
 
-    background:#e2b96f;
+  color:#191012;
 
-    color:#191012;
+  border:none;
 
-    border:0;
-
-    font-size:15px;
+  font-size:15px;
 }
 
-/* progress */
+/* PROGRESS */
 
 .progress-wrap{
+  margin-top:11px;
 
-    margin-top:11px;
+  display:flex;
 
-    display:flex;
+  align-items:center;
 
-    align-items:center;
-
-    gap:9px;
+  gap:9px;
 }
 
 .time{
+  width:30px;
 
-    width:30px;
+  flex-shrink:0;
 
-    flex-shrink:0;
+  font-size:8px;
 
-    color:
-        rgba(255,255,255,.45);
-
-    font-size:8px;
+  color:
+    rgba(255,255,255,.42);
 }
 
 .progress{
+  height:4px;
 
-    flex:1;
+  flex:1;
 
-    height:4px;
+  min-width:0;
 
-    background:
-        rgba(255,255,255,.13);
+  background:
+    rgba(255,255,255,.13);
 
-    border-radius:10px;
+  border-radius:10px;
 
-    cursor:pointer;
+  cursor:pointer;
+
+  overflow:hidden;
 }
 
 .progress-bar{
+  width:0;
+  height:100%;
 
-    width:0;
+  background:#e2b96f;
 
-    height:100%;
-
-    background:#e2b96f;
-
-    border-radius:10px;
+  transition:
+    width .2s linear;
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:799px){
 
-    nav{
-        padding:22px 20px;
-    }
+  nav{
+    padding:22px 20px;
+  }
 
-    .nav-right{
-        display:none;
-    }
+  .nav-right{
+    display:none;
+  }
 
-    .hero{
-        padding:
-            110px 20px
-            180px;
-    }
+  .hero{
+    padding:
+      110px
+      20px
+      160px;
+  }
 
-    h1{
-        font-size:22vw;
-        letter-spacing:-4px;
-    }
+  h1{
+    font-size:22vw;
+    letter-spacing:-4px;
+  }
 
-    .shivani{
-        margin-left:25px;
-    }
+  h1 .shivani{
+    margin-left:25px;
+  }
 
-    .memory-section{
-        padding:
-            80px 20px
-            230px;
-    }
+  .floating-heart{
+    display:none;
+  }
 
-    .memory-grid{
-        grid-template-columns:1fr;
-    }
+  .memory-section{
+    padding:
+      80px
+      20px
+      220px;
+  }
 
-    /* floating video */
+  .memory-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
 
-    .video-window{
+  .memory{
+    min-height:190px;
+  }
 
-        top:75px;
-        right:10px;
+  /* VIDEO */
 
-        width:230px;
-        height:135px;
+  #youtube-player{
+    width:78vw;
 
-        min-width:180px;
-        min-height:105px;
+    top:105px;
+    right:11vw;
 
-        max-width:78vw;
-        max-height:38vh;
-    }
+    border-radius:17px;
+  }
 
-    .cassette{
+  .youtube-dragbar{
+    width:78vw;
 
-        width:82vw;
+    top:105px;
+    right:11vw;
 
-        top:42%;
-    }
+    height:34px;
 
-    .music-player{
+    border-radius:
+      17px
+      17px
+      0
+      0;
 
-        width:
-            calc(100% - 16px);
+    font-size:8px;
+  }
 
-        bottom:8px;
+  /* MUSIC PLAYER */
 
-        padding:10px;
+  .music-player{
+    width:
+      calc(100% - 16px);
 
-        border-radius:17px;
-    }
+    bottom:8px;
 
-    .player-main{
+    padding:10px;
 
-        grid-template-columns:
-            44px minmax(0,1fr)
-            auto;
+    border-radius:17px;
+  }
 
-        gap:8px;
-    }
+  .player-main{
+    grid-template-columns:
+      44px
+      minmax(0,1fr)
+      auto;
 
-    .album{
+    gap:8px;
+  }
 
-        width:44px;
-        height:44px;
-    }
+  .album{
+    width:44px;
+    height:44px;
+  }
 
-    .song-title{
-        font-size:11px;
-    }
+  .song-title{
+    font-size:11px;
 
-    .controls{
-        gap:3px;
-    }
+    -webkit-line-clamp:2;
+  }
 
-    .btn{
+  .song-status{
+    font-size:8px;
+  }
 
-        width:30px;
-        height:30px;
+  .controls{
+    gap:3px;
+  }
 
-        font-size:8px;
-    }
+  .btn{
+    width:30px;
+    height:30px;
 
-    .btn.play{
+    font-size:8px;
+  }
 
-        width:38px;
-        height:38px;
+  .btn.play{
+    width:38px;
+    height:38px;
 
-        font-size:12px;
-    }
+    font-size:12px;
+  }
 }
+
+/* VERY SMALL PHONES */
 
 @media(max-width:390px){
 
-    .video-window{
+  .music-player{
+    padding:8px;
+  }
 
-        width:205px;
-        height:120px;
-    }
+  .player-main{
+    grid-template-columns:
+      38px
+      minmax(0,1fr)
+      auto;
 
-    .player-main{
+    gap:6px;
+  }
 
-        grid-template-columns:
-            38px minmax(0,1fr)
-            auto;
+  .album{
+    width:38px;
+    height:38px;
+  }
 
-        gap:5px;
-    }
+  .song-title{
+    font-size:10px;
+  }
 
-    .album{
+  .btn{
+    width:27px;
+    height:27px;
+  }
 
-        width:38px;
-        height:38px;
-    }
-
-    .song-title{
-        font-size:9px;
-    }
-
-    .btn{
-
-        width:26px;
-        height:26px;
-    }
-
-    .btn.play{
-
-        width:33px;
-        height:33px;
-    }
+  .btn.play{
+    width:34px;
+    height:34px;
+  }
 }
 </style>
 </head>
@@ -1100,968 +936,1301 @@ footer{
 
 <div class="background"></div>
 
+<!-- NAV -->
+
 <nav>
 
-    <div class="logo">
-        Manish <span>♥</span> Shivani
-    </div>
+  <div class="logo">
+    Manish <span>♥</span> Shivani
+  </div>
 
-    <div class="nav-right">
-        Our Little Universe
-    </div>
+  <div class="nav-right">
+    Our Little Universe
+  </div>
 
 </nav>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-    <div class="hero-content">
+  <div class="hero-content">
 
-        <div class="small-title">
-            A song for two hearts
-        </div>
-
-        <h1>
-            <span class="manish">Manish</span>
-            <span class="shivani">Shivani</span>
-        </h1>
-
-        <p class="hero-sub">
-            Some stories are written in words.
-            Ours is written in songs, little moments,
-            late-night conversations and memories
-            we never want to forget.
-        </p>
-
-        <div class="scroll">
-            ↓ &nbsp; scroll into our memories
-        </div>
-
+    <div class="small-title">
+      A song for two hearts
     </div>
+
+    <h1>
+      <span class="manish">Manish</span>
+      <span class="shivani">Shivani</span>
+    </h1>
+
+    <p class="hero-sub">
+      Some stories are written in words.
+      Ours is written in songs, little moments,
+      late-night conversations and memories
+      we never want to forget.
+    </p>
+
+    <div class="scroll">
+      ↓ &nbsp; scroll into our memories
+    </div>
+
+  </div>
+
+  <div class="floating-heart">
+    ♥
+  </div>
 
 </section>
 
+
+<!-- MEMORIES -->
 
 <section class="memory-section">
 
-    <div class="section-label">
-        01 — The memories
-    </div>
+  <div class="section-label">
+    01 — The memories
+  </div>
 
-    <h2 class="section-title">
-        Things worth remembering.
-    </h2>
+  <h2 class="section-title">
+    Things worth remembering.
+  </h2>
 
-    <div class="memory-grid">
+  <div class="memory-grid">
 
-        <div class="memory">
-            <div class="memory-number">
-                MEMORY 01
-            </div>
+    <div class="memory">
 
-            <h3>
-                Our Song
-            </h3>
+      <div class="memory-number">
+        MEMORY 01
+      </div>
 
-            <p>
-                Every relationship eventually gets
-                that one song that somehow sounds
-                different after you meet.
-            </p>
-        </div>
+      <h3>
+        Our Song
+      </h3>
 
-        <div class="memory">
-
-            <div class="memory-number">
-                MEMORY 02
-            </div>
-
-            <h3>
-                Just Us
-            </h3>
-
-            <p>
-                Two people, countless conversations,
-                random laughs and moments that nobody
-                else understands.
-            </p>
-
-        </div>
-
-        <div class="memory">
-
-            <div class="memory-number">
-                MEMORY 03
-            </div>
-
-            <h3>
-                Forever
-            </h3>
-
-            <p>
-                Not because everything will always be
-                perfect, but because we choose each
-                other again and again.
-            </p>
-
-        </div>
+      <p>
+        Every relationship eventually gets
+        that one song that somehow sounds
+        different after you meet.
+      </p>
 
     </div>
+
+
+    <div class="memory">
+
+      <div class="memory-number">
+        MEMORY 02
+      </div>
+
+      <h3>
+        Just Us
+      </h3>
+
+      <p>
+        Two people, countless conversations,
+        random laughs and moments that
+        nobody else understands.
+      </p>
+
+    </div>
+
+
+    <div class="memory">
+
+      <div class="memory-number">
+        MEMORY 03
+      </div>
+
+      <h3>
+        Forever
+      </h3>
+
+      <p>
+        Not because everything will always
+        be perfect, but because we choose
+        each other again and again.
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
 
+<!-- QUOTE -->
+
 <section class="quote-section">
 
-    <div>
+  <div>
 
-        <div class="quote">
-
-            “Somewhere between the music
-            and the memories,
-            <span>I found you.</span>”
-
-        </div>
-
-        <div class="quote-author">
-            MANISH × SHIVANI
-        </div>
-
+    <div class="quote">
+      “Somewhere between the music and
+      the memories, <span>I found you.</span>”
     </div>
+
+    <div class="quote-author">
+      MANISH × SHIVANI
+    </div>
+
+  </div>
 
 </section>
 
 
 <footer>
-    MADE WITH LOVE • MANISH ♥ SHIVANI
+  MADE WITH LOVE • MANISH ♥ SHIVANI
 </footer>
 
 
-<!-- =================================================
-     FLOATING YOUTUBE PLAYER
-================================================= -->
+<!-- =====================================================
+     FLOATING YOUTUBE VIDEO
+===================================================== -->
 
 <div
-    class="video-window"
-    id="videoWindow"
->
+  class="youtube-dragbar"
+  id="youtubeDragbar">
 
-    <div
-        class="video-bar"
-        id="videoBar"
-    >
+  <span>
+    YOUTUBE MUSIC • DRAG ME
+  </span>
 
-        <div class="video-title">
-            YouTube Music • Drag Me
-        </div>
+  <button
+    id="closeYoutube"
+    aria-label="Close video">
 
-        <button
-            class="video-close"
-            id="videoClose"
-        >
-            ×
-        </button>
+    ×
 
-    </div>
-
-
-    <div id="youtube-player"></div>
-
-    <div class="resize-hint">
-        ↘
-    </div>
+  </button>
 
 </div>
 
 
-<!-- =================================================
-     CASSETTE
-================================================= -->
-
-<div class="cassette">
-
-    <div class="cassette-label">
-
-        <img
-            id="songThumb"
-            src=""
-            alt="Song"
-        >
-
-        <div class="cassette-name">
-            MANISH ♥ SHIVANI
-        </div>
-
-    </div>
-
-    <div class="reel left"></div>
-
-    <div class="reel right"></div>
-
-</div>
+<div id="youtube-player"></div>
 
 
-<!-- =================================================
+<!-- =====================================================
      MUSIC PLAYER
-================================================= -->
+===================================================== -->
 
 <div class="music-player">
 
-    <div class="player-main">
-
-        <div class="album">
-
-            <img
-                id="playerThumb"
-                src=""
-                alt="Song thumbnail"
-            >
-
-        </div>
+  <div class="player-main">
 
 
-        <div>
+    <!-- THUMBNAIL -->
 
-            <div
-                class="song-title"
-                id="songTitle"
-            >
-                Manish ♥ Shivani
-            </div>
+    <div
+      class="album"
+      id="album">
 
-            <div
-                class="song-status"
-                id="songStatus"
-            >
-                LOADING PLAYLIST...
-            </div>
+      <span class="fallback">
+        ♥
+      </span>
 
-        </div>
-
-
-        <div class="controls">
-
-            <button
-                class="btn"
-                id="previous"
-            >
-                |◀
-            </button>
-
-            <button
-                class="btn"
-                id="back10"
-            >
-                ↶10
-            </button>
-
-            <button
-                class="btn play"
-                id="playPause"
-            >
-                ▶
-            </button>
-
-            <button
-                class="btn"
-                id="forward10"
-            >
-                10↷
-            </button>
-
-            <button
-                class="btn"
-                id="next"
-            >
-                ▶|
-            </button>
-
-        </div>
+      <img
+        id="thumb"
+        alt="Current song thumbnail"
+        style="display:none">
 
     </div>
 
 
-    <div class="progress-wrap">
+    <!-- SONG INFORMATION -->
 
-        <span
-            class="time"
-            id="currentTime"
-        >
-            0:00
-        </span>
+    <div>
 
-        <div
-            class="progress"
-            id="progress"
-        >
+      <div
+        class="song-title"
+        id="songTitle">
 
-            <div
-                class="progress-bar"
-                id="progressBar"
-            ></div>
+        Manish ♥ Shivani — Our Playlist
 
-        </div>
+      </div>
 
-        <span
-            class="time"
-            id="duration"
-        >
-            0:00
-        </span>
+
+      <div
+        class="song-status"
+        id="songStatus">
+
+        Loading YouTube...
+
+      </div>
 
     </div>
+
+
+    <!-- CONTROLS -->
+
+    <div class="controls">
+
+      <button
+        class="btn"
+        id="prevSong"
+        aria-label="Previous song">
+
+        |◀
+
+      </button>
+
+
+      <button
+        class="btn"
+        id="back10"
+        aria-label="Back 10 seconds">
+
+        ↶10
+
+      </button>
+
+
+      <button
+        class="btn play"
+        id="play"
+        aria-label="Play">
+
+        ▶
+
+      </button>
+
+
+      <button
+        class="btn"
+        id="forward10"
+        aria-label="Forward 10 seconds">
+
+        10↷
+
+      </button>
+
+
+      <button
+        class="btn"
+        id="nextSong"
+        aria-label="Next song">
+
+        ▶|
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- PROGRESS -->
+
+  <div class="progress-wrap">
+
+    <span
+      class="time"
+      id="current">
+
+      0:00
+
+    </span>
+
+
+    <div
+      class="progress"
+      id="progress">
+
+      <div
+        class="progress-bar"
+        id="progressBar">
+      </div>
+
+    </div>
+
+
+    <span
+      class="time"
+      id="duration">
+
+      0:00
+
+    </span>
+
+  </div>
 
 </div>
 
 
 <script>
 
-/* =================================================
+/* =====================================================
    YOUTUBE PLAYLIST
-================================================= */
+===================================================== */
 
 const PLAYLIST_ID =
-    "PLEw8-3-6R5VA";
+  "PLEw8-3-6R5VA";
+
 
 let player = null;
-let ready = false;
+
+let youtubeReady = false;
+
+let progressTimer = null;
 
 
-/* =================================================
+/* Helper */
+
+const $ = id =>
+  document.getElementById(id);
+
+
+/* Elements */
+
+const playButton =
+  $("play");
+
+const prevSong =
+  $("prevSong");
+
+const nextSong =
+  $("nextSong");
+
+const back10 =
+  $("back10");
+
+const forward10 =
+  $("forward10");
+
+const songTitle =
+  $("songTitle");
+
+const songStatus =
+  $("songStatus");
+
+const progress =
+  $("progress");
+
+const progressBar =
+  $("progressBar");
+
+const currentTime =
+  $("current");
+
+const durationTime =
+  $("duration");
+
+const thumb =
+  $("thumb");
+
+const fallback =
+  document.querySelector(".fallback");
+
+
+/* =====================================================
    LOAD YOUTUBE API
-================================================= */
+===================================================== */
 
 const script =
-    document.createElement("script");
+  document.createElement("script");
 
 script.src =
-    "https://www.youtube.com/iframe_api";
+  "https://www.youtube.com/iframe_api";
 
 document.head.appendChild(script);
 
 
-/* =================================================
-   YOUTUBE READY
-================================================= */
+/* =====================================================
+   YOUTUBE PLAYER READY
+===================================================== */
 
 window.onYouTubeIframeAPIReady =
 function(){
 
-    player =
-        new YT.Player(
-            "youtube-player",
-            {
+  player =
+    new YT.Player(
+      "youtube-player",
+      {
 
-                width:"100%",
-                height:"100%",
+        width:"420",
+        height:"264",
 
-                playerVars:{
+        playerVars:{
 
-                    autoplay:0,
+          autoplay:0,
 
-                    controls:1,
+          controls:0,
 
-                    playsinline:1,
+          playsinline:1,
 
-                    rel:0,
+          rel:0,
 
-                    modestbranding:1,
+          modestbranding:1,
 
-                    listType:"playlist",
+          enablejsapi:1,
 
-                    list:PLAYLIST_ID
+          listType:"playlist",
 
-                },
+          list:PLAYLIST_ID
 
-                events:{
+        },
 
-                    onReady:function(){
+        events:{
 
-                        ready = true;
+          onReady:function(){
 
-                        document.getElementById(
-                            "songStatus"
-                        ).textContent =
-                            "READY • PRESS PLAY";
+            youtubeReady = true;
 
-                        updateSong();
+            songStatus.textContent =
+              "READY • PRESS PLAY";
 
-                    },
+            updateSong();
 
-                    onStateChange:
-                        handleState
+            startProgress();
 
-                }
+          },
+
+
+          onStateChange:function(e){
+
+            if(
+              e.data ===
+              YT.PlayerState.PLAYING
+            ){
+
+              playButton.textContent =
+                "Ⅱ";
+
+              songStatus.textContent =
+                "NOW PLAYING";
+
+              updateSong();
 
             }
-        );
+
+
+            else if(
+              e.data ===
+              YT.PlayerState.PAUSED
+            ){
+
+              playButton.textContent =
+                "▶";
+
+              songStatus.textContent =
+                "PAUSED";
+
+            }
+
+
+            else if(
+              e.data ===
+              YT.PlayerState.BUFFERING
+            ){
+
+              songStatus.textContent =
+                "LOADING SONG...";
+
+            }
+
+
+            else if(
+              e.data ===
+              YT.PlayerState.ENDED
+            ){
+
+              playButton.textContent =
+                "▶";
+
+              songStatus.textContent =
+                "SONG ENDED";
+
+            }
+
+          },
+
+
+          onError:function(){
+
+            songStatus.textContent =
+              "YOUTUBE PLAYBACK ERROR";
+
+          }
+
+        }
+
+      }
+    );
 
 };
 
 
-/* =================================================
-   PLAYER STATE
-================================================= */
-
-function handleState(event){
-
-    const cassette =
-        document.querySelector(
-            ".cassette"
-        );
-
-    const button =
-        document.getElementById(
-            "playPause"
-        );
-
-    const status =
-        document.getElementById(
-            "songStatus"
-        );
-
-
-    if(
-        event.data ===
-        YT.PlayerState.PLAYING
-    ){
-
-        cassette.classList.add(
-            "video-playing"
-        );
-
-        button.textContent =
-            "Ⅱ";
-
-        status.textContent =
-            "NOW PLAYING";
-
-        updateSong();
-
-    }
-
-
-    else if(
-        event.data ===
-        YT.PlayerState.PAUSED
-    ){
-
-        cassette.classList.remove(
-            "video-playing"
-        );
-
-        button.textContent =
-            "▶";
-
-        status.textContent =
-            "PAUSED";
-
-    }
-
-
-    else if(
-        event.data ===
-        YT.PlayerState.BUFFERING
-    ){
-
-        status.textContent =
-            "BUFFERING...";
-
-    }
-
-}
-
-
-/* =================================================
+/* =====================================================
    PLAY / PAUSE
-================================================= */
+===================================================== */
 
-document.getElementById(
-    "playPause"
-).onclick =
+playButton.onclick =
 function(){
 
-    if(!ready)
-        return;
+  if(!youtubeReady)
+    return;
 
-    const state =
-        player.getPlayerState();
+  const state =
+    player.getPlayerState();
 
-    if(
-        state ===
-        YT.PlayerState.PLAYING
-    ){
 
-        player.pauseVideo();
+  if(
+    state ===
+    YT.PlayerState.PLAYING
+  ){
 
-    }else{
+    player.pauseVideo();
 
-        player.playVideo();
+  }
 
-    }
+  else{
+
+    player.playVideo();
+
+  }
 
 };
 
 
-/* =================================================
-   NEXT
-================================================= */
-
-document.getElementById(
-    "next"
-).onclick =
-function(){
-
-    if(!ready)
-        return;
-
-    player.nextVideo();
-
-};
-
-
-/* =================================================
+/* =====================================================
    PREVIOUS
-================================================= */
+===================================================== */
 
-document.getElementById(
-    "previous"
-).onclick =
+prevSong.onclick =
 function(){
 
-    if(!ready)
-        return;
+  if(youtubeReady){
 
     player.previousVideo();
 
+  }
+
 };
 
 
-/* =================================================
-   BACK 10
-================================================= */
+/* =====================================================
+   NEXT
+===================================================== */
 
-document.getElementById(
-    "back10"
-).onclick =
+nextSong.onclick =
 function(){
 
-    if(!ready)
-        return;
+  if(youtubeReady){
 
-    player.seekTo(
-        Math.max(
-            0,
-            player.getCurrentTime() - 10
-        ),
-        true
-    );
+    player.nextVideo();
+
+  }
 
 };
 
 
-/* =================================================
-   FORWARD 10
-================================================= */
+/* =====================================================
+   BACK 10 SEC
+===================================================== */
 
-document.getElementById(
-    "forward10"
-).onclick =
+back10.onclick =
 function(){
 
-    if(!ready)
-        return;
+  if(!youtubeReady)
+    return;
 
-    player.seekTo(
-        Math.min(
-            player.getDuration(),
-            player.getCurrentTime() + 10
-        ),
-        true
-    );
+  player.seekTo(
+    Math.max(
+      0,
+      player.getCurrentTime() - 10
+    ),
+    true
+  );
 
 };
 
 
-/* =================================================
-   SONG THUMBNAIL + TITLE
-================================================= */
+/* =====================================================
+   FORWARD 10 SEC
+===================================================== */
+
+forward10.onclick =
+function(){
+
+  if(!youtubeReady)
+    return;
+
+  player.seekTo(
+
+    Math.min(
+      player.getDuration(),
+      player.getCurrentTime() + 10
+    ),
+
+    true
+
+  );
+
+};
+
+
+/* =====================================================
+   UPDATE SONG NAME + THUMBNAIL
+===================================================== */
 
 function updateSong(){
 
+  if(
+    !youtubeReady ||
+    !player
+  )
+    return;
+
+
+  try{
+
+    const data =
+      player.getVideoData();
+
+
+    /* Song title */
+
     if(
-        !ready ||
-        !player
-    )
-        return;
+      data &&
+      data.title
+    ){
 
-    try{
+      songTitle.textContent =
+        data.title;
 
-        const data =
-            player.getVideoData();
-
-        if(
-            data &&
-            data.title
-        ){
-
-            document.getElementById(
-                "songTitle"
-            ).textContent =
-                data.title;
-
-        }
+    }
 
 
-        if(
-            data &&
-            data.video_id
-        ){
+    /* Thumbnail */
 
-            const image =
-                "https://i.ytimg.com/vi/"
-                +
-                data.video_id
-                +
-                "/hqdefault.jpg";
+    if(
+      data &&
+      data.video_id
+    ){
 
-            document.getElementById(
-                "songThumb"
-            ).src =
-                image;
+      const url =
+        "https://i.ytimg.com/vi/" +
+        data.video_id +
+        "/hqdefault.jpg";
 
-            document.getElementById(
-                "playerThumb"
-            ).src =
-                image;
 
-        }
+      thumb.onload =
+      function(){
 
-    }catch(e){}
+        thumb.style.display =
+          "block";
+
+        fallback.style.display =
+          "none";
+
+      };
+
+
+      thumb.onerror =
+      function(){
+
+        thumb.style.display =
+          "none";
+
+        fallback.style.display =
+          "block";
+
+      };
+
+
+      thumb.src = url;
+
+    }
+
+  }
+
+  catch(e){}
 
 }
 
 
-/* =================================================
-   PROGRESS
-================================================= */
+/* =====================================================
+   PROGRESS BAR
+===================================================== */
 
-setInterval(
-function(){
+function startProgress(){
 
-    if(
-        !ready ||
-        !player
-    )
-        return;
+  clearInterval(
+    progressTimer
+  );
 
-    try{
 
-        const duration =
+  progressTimer =
+    setInterval(
+
+      function(){
+
+        if(
+          !youtubeReady ||
+          !player
+        )
+          return;
+
+
+        try{
+
+          const duration =
             player.getDuration();
 
-        const current =
+          const current =
             player.getCurrentTime();
 
-        if(duration > 0){
 
-            document.getElementById(
-                "progressBar"
-            ).style.width =
-                (
-                    current /
-                    duration *
-                    100
-                ) + "%";
+          if(duration > 0){
 
-            document.getElementById(
-                "currentTime"
-            ).textContent =
-                formatTime(current);
+            progressBar.style.width =
+              (
+                current /
+                duration *
+                100
+              ) + "%";
 
-            document.getElementById(
-                "duration"
-            ).textContent =
-                formatTime(duration);
+
+            currentTime.textContent =
+              formatTime(current);
+
+
+            durationTime.textContent =
+              formatTime(duration);
+
+          }
+
+
+          updateSong();
 
         }
 
-        updateSong();
+        catch(e){}
 
-    }catch(e){}
+      },
 
-},
-500
-);
+      500
+
+    );
+
+}
 
 
-/* =================================================
-   PROGRESS CLICK
-================================================= */
+/* =====================================================
+   CLICK PROGRESS BAR
+===================================================== */
 
-document.getElementById(
-    "progress"
-).onclick =
+progress.onclick =
 function(e){
 
-    if(!ready)
-        return;
+  if(!youtubeReady)
+    return;
 
-    const rect =
-        this.getBoundingClientRect();
 
-    const percent =
-        (
-            e.clientX -
-            rect.left
-        ) /
-        rect.width;
+  const rect =
+    progress.getBoundingClientRect();
 
-    player.seekTo(
-        player.getDuration() *
-        Math.max(
-            0,
-            Math.min(
-                1,
-                percent
-            )
-        ),
-        true
-    );
+
+  const percent =
+    (
+      e.clientX -
+      rect.left
+    ) / rect.width;
+
+
+  player.seekTo(
+
+    player.getDuration() *
+    Math.max(
+      0,
+      Math.min(
+        1,
+        percent
+      )
+    ),
+
+    true
+
+  );
 
 };
 
 
-/* =================================================
+/* =====================================================
    TIME FORMAT
-================================================= */
+===================================================== */
 
 function formatTime(seconds){
 
-    seconds =
-        Math.floor(
-            Number(seconds) || 0
-        );
-
-    return (
-        Math.floor(seconds / 60)
-        +
-        ":"
-        +
-        String(
-            seconds % 60
-        ).padStart(2,"0")
+  seconds =
+    Math.floor(
+      Number(seconds) || 0
     );
+
+
+  return (
+
+    Math.floor(
+      seconds / 60
+    )
+
+    +
+
+    ":"
+
+    +
+
+    String(
+      seconds % 60
+    ).padStart(
+      2,
+      "0"
+    )
+
+  );
 
 }
 
 
-/* =================================================
-   FLOATING VIDEO DRAG
-================================================= */
+/* =====================================================
+   KEYBOARD CONTROLS
+===================================================== */
 
-const videoWindow =
-    document.getElementById(
-        "videoWindow"
-    );
+document.addEventListener(
+  "keydown",
+  function(e){
 
-const videoBar =
-    document.getElementById(
-        "videoBar"
-    );
+    if(e.code === "Space"){
+
+      e.preventDefault();
+
+      playButton.click();
+
+    }
+
+
+    if(
+      e.key.toLowerCase() === "n"
+    ){
+
+      nextSong.click();
+
+    }
+
+
+    if(
+      e.key.toLowerCase() === "p"
+    ){
+
+      prevSong.click();
+
+    }
+
+
+    if(e.key === "ArrowLeft"){
+
+      back10.click();
+
+    }
+
+
+    if(e.key === "ArrowRight"){
+
+      forward10.click();
+
+    }
+
+  }
+);
+
+
+/* =====================================================
+   SMOOTH DRAGGABLE YOUTUBE WINDOW
+===================================================== */
+
+const videoBox =
+  document.getElementById(
+    "youtube-player"
+  );
+
+
+const dragbar =
+  document.getElementById(
+    "youtubeDragbar"
+  );
+
+
+const closeYoutube =
+  document.getElementById(
+    "closeYoutube"
+  );
+
 
 let dragging = false;
 
-let startX = 0;
-let startY = 0;
+let dragStartX = 0;
 
-let startLeft = 0;
-let startTop = 0;
+let dragStartY = 0;
+
+let boxStartLeft = 0;
+
+let boxStartTop = 0;
 
 
-videoBar.addEventListener(
-    "pointerdown",
-    function(e){
+/* =====================================================
+   START DRAG
+===================================================== */
 
-        if(
-            e.target.id ===
-            "videoClose"
+function beginDrag(
+  clientX,
+  clientY
+){
+
+  const rect =
+    videoBox.getBoundingClientRect();
+
+
+  dragging = true;
+
+
+  dragStartX =
+    clientX;
+
+  dragStartY =
+    clientY;
+
+
+  boxStartLeft =
+    rect.left;
+
+  boxStartTop =
+    rect.top;
+
+
+  videoBox.style.left =
+    rect.left + "px";
+
+
+  videoBox.style.top =
+    rect.top + "px";
+
+
+  videoBox.style.right =
+    "auto";
+
+
+  dragbar.style.left =
+    rect.left + "px";
+
+
+  dragbar.style.top =
+    rect.top + "px";
+
+
+  dragbar.style.right =
+    "auto";
+
+
+  videoBox.classList.add(
+    "dragging"
+  );
+
+}
+
+
+/* =====================================================
+   MOVE DRAG
+===================================================== */
+
+function moveDrag(
+  clientX,
+  clientY
+){
+
+  if(!dragging)
+    return;
+
+
+  const maxLeft =
+    window.innerWidth -
+    videoBox.offsetWidth -
+    5;
+
+
+  const maxTop =
+    window.innerHeight -
+    videoBox.offsetHeight -
+    5;
+
+
+  const left =
+    Math.max(
+
+      5,
+
+      Math.min(
+
+        maxLeft,
+
+        boxStartLeft +
+        (
+          clientX -
+          dragStartX
         )
-            return;
 
-        dragging = true;
+      )
 
-        videoBar.setPointerCapture(
-            e.pointerId
-        );
+    );
 
-        const rect =
-            videoWindow.getBoundingClientRect();
 
-        startX =
-            e.clientX;
+  const top =
+    Math.max(
 
-        startY =
-            e.clientY;
+      5,
 
-        startLeft =
-            rect.left;
+      Math.min(
 
-        startTop =
-            rect.top;
+        maxTop,
 
-        videoWindow.style.right =
-            "auto";
+        boxStartTop +
+        (
+          clientY -
+          dragStartY
+        )
 
-        videoWindow.style.left =
-            startLeft + "px";
+      )
 
-        videoWindow.style.top =
-            startTop + "px";
+    );
 
-    }
+
+  videoBox.style.left =
+    left + "px";
+
+
+  videoBox.style.top =
+    top + "px";
+
+
+  dragbar.style.left =
+    left + "px";
+
+
+  dragbar.style.top =
+    top + "px";
+
+}
+
+
+/* =====================================================
+   END DRAG
+===================================================== */
+
+function endDrag(){
+
+  dragging = false;
+
+  videoBox.classList.remove(
+    "dragging"
+  );
+
+}
+
+
+/* =====================================================
+   PC MOUSE DRAG
+===================================================== */
+
+dragbar.addEventListener(
+  "mousedown",
+  function(e){
+
+    if(
+      e.target ===
+      closeYoutube
+    )
+      return;
+
+
+    beginDrag(
+      e.clientX,
+      e.clientY
+    );
+
+  }
 );
 
-
-videoBar.addEventListener(
-    "pointermove",
-    function(e){
-
-        if(!dragging)
-            return;
-
-        let newLeft =
-            startLeft +
-            e.clientX -
-            startX;
-
-        let newTop =
-            startTop +
-            e.clientY -
-            startY;
-
-        const maxLeft =
-            window.innerWidth -
-            videoWindow.offsetWidth;
-
-        const maxTop =
-            window.innerHeight -
-            videoWindow.offsetHeight;
-
-        newLeft =
-            Math.max(
-                0,
-                Math.min(
-                    newLeft,
-                    maxLeft
-                )
-            );
-
-        newTop =
-            Math.max(
-                0,
-                Math.min(
-                    newTop,
-                    maxTop
-                )
-            );
-
-        videoWindow.style.left =
-            newLeft + "px";
-
-        videoWindow.style.top =
-            newTop + "px";
-
-    }
-);
-
-
-videoBar.addEventListener(
-    "pointerup",
-    function(){
-
-        dragging = false;
-
-    }
-);
-
-
-/* =================================================
-   CLOSE / REOPEN VIDEO
-================================================= */
-
-document.getElementById(
-    "videoClose"
-).onclick =
-function(){
-
-    videoWindow.style.display =
-        "none";
-
-};
-
-
-/* =================================================
-   KEYBOARD SHORTCUTS
-================================================= */
 
 document.addEventListener(
-    "keydown",
-    function(e){
+  "mousemove",
+  function(e){
 
-        if(
-            e.code === "Space"
-        ){
+    moveDrag(
+      e.clientX,
+      e.clientY
+    );
 
-            e.preventDefault();
+  }
+);
 
-            document.getElementById(
-                "playPause"
-            ).click();
 
-        }
+document.addEventListener(
+  "mouseup",
+  endDrag
+);
 
-        if(
-            e.key.toLowerCase() === "n"
-        ){
 
-            document.getElementById(
-                "next"
-            ).click();
+/* =====================================================
+   MOBILE TOUCH DRAG
+===================================================== */
 
-        }
+dragbar.addEventListener(
+  "touchstart",
+  function(e){
 
-        if(
-            e.key.toLowerCase() === "p"
-        ){
+    if(
+      e.target ===
+      closeYoutube
+    )
+      return;
 
-            document.getElementById(
-                "previous"
-            ).click();
 
-        }
+    const t =
+      e.touches[0];
 
-        if(
-            e.key === "ArrowLeft"
-        ){
 
-            document.getElementById(
-                "back10"
-            ).click();
+    beginDrag(
+      t.clientX,
+      t.clientY
+    );
 
-        }
+  },
+  {
+    passive:false
+  }
+);
 
-        if(
-            e.key === "ArrowRight"
-        ){
 
-            document.getElementById(
-                "forward10"
-            ).click();
+document.addEventListener(
+  "touchmove",
+  function(e){
 
-        }
+    if(!dragging)
+      return;
 
-    }
+
+    e.preventDefault();
+
+
+    const t =
+      e.touches[0];
+
+
+    moveDrag(
+      t.clientX,
+      t.clientY
+    );
+
+  },
+  {
+    passive:false
+  }
+);
+
+
+document.addEventListener(
+  "touchend",
+  endDrag
+);
+
+
+/* =====================================================
+   CLOSE YOUTUBE VIDEO
+===================================================== */
+
+closeYoutube.addEventListener(
+  "click",
+  function(){
+
+    videoBox.style.display =
+      "none";
+
+    dragbar.style.display =
+      "none";
+
+  }
+);
+
+
+/* =====================================================
+   KEEP VIDEO INSIDE SCREEN AFTER RESIZE
+===================================================== */
+
+window.addEventListener(
+  "resize",
+  function(){
+
+    if(!videoBox.style.left)
+      return;
+
+
+    const rect =
+      videoBox.getBoundingClientRect();
+
+
+    const left =
+      Math.max(
+
+        5,
+
+        Math.min(
+
+          window.innerWidth -
+          videoBox.offsetWidth -
+          5,
+
+          rect.left
+
+        )
+
+      );
+
+
+    const top =
+      Math.max(
+
+        5,
+
+        Math.min(
+
+          window.innerHeight -
+          videoBox.offsetHeight -
+          5,
+
+          rect.top
+
+        )
+
+      );
+
+
+    videoBox.style.left =
+      left + "px";
+
+
+    videoBox.style.top =
+      top + "px";
+
+
+    dragbar.style.left =
+      left + "px";
+
+
+    dragbar.style.top =
+      top + "px";
+
+  }
 );
 
 </script>
